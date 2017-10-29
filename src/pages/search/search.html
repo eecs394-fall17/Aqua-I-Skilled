@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>I-Skilled</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <ion-searchbar
+    [(ngModel)]="skillSearch"
+    [showCancelButton]="shouldShowCancel"
+    (ionInput)="onSearchInput($event)"
+    (ionCancel)="onSearchCancel($event)">
+  </ion-searchbar>
+
+  <ion-card *ngFor="let result of results;">
+    <ion-card-header>
+      <img style="float: left;" width="20" height="20" src="img/profile_pic.png"/>
+      <span style="float: right;">
+        {{ result["keywords"][0] | capWord }}
+      </span>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>{{result["name"]}}</p>
+      <p>{{result["distance"]}}</p>
+      <p>{{result["stars"]}}</p>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
