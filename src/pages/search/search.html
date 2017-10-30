@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content padding>
-  
+
   <ion-searchbar
     [(ngModel)]="skillSearch"
     [showCancelButton]="shouldShowCancel"
@@ -13,7 +13,7 @@
     (ionCancel)="onSearchCancel($event)">
   </ion-searchbar>
 
-  <ion-card *ngFor="let result of results;">
+  <ion-card *ngFor="let result of results;"  (click)="confirmTrans()">
     <ion-card-header>
       <img style="float: left;" width="20" height="20" src="img/profile_pic.png"/>
       <span style="float: right;">

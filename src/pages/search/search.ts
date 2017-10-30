@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
+import { TransconfirmPage } from '../pages/transconfirm/transconfirm';
+
 @Component({
   selector: 'page-search',
   templateUrl: 'search.html'
 })
 export class SearchPage {
-  
+
   skillSearch:any;
 
   results:any;
@@ -29,4 +31,10 @@ export class SearchPage {
   onSearchCancel(event) {
     console.log("Search cancelled");
   }
+
+  confirmTrans(){
+    this.navCtrl.push(TransconfirmPage);
+  }
+
+
 }
