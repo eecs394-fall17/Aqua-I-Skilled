@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-import { TransconfirmPage } from '../pages/transconfirm/transconfirm';
+import { TransconfirmPage } from '../transconfirm/transconfirm';
 
 @Component({
   selector: 'page-search',
