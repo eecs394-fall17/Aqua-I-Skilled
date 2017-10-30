@@ -11,7 +11,7 @@ export class SearchPage {
 
   skillSearch:any;
 
-  results:any;
+  public results:any;
 
   constructor(public navCtrl: NavController) {
     this.results = [
@@ -19,7 +19,7 @@ export class SearchPage {
         keywords: ["oil change", "automotive"],
         name: "Daniel",
         distance: "0.8 miles",
-        stars: "4 stars",
+        stars: 4,
       },
     ];
   }
@@ -32,8 +32,16 @@ export class SearchPage {
     console.log("Search cancelled");
   }
 
-  confirmTrans(){
-    this.navCtrl.push(TransconfirmPage);
+  confirmTrans(results){
+  let data = {
+    skill: this.results[0].keywords[0],
+    giver: this.results[0].name,
+    dist: this.results[0].distance,
+    num_stars: this.results[0].stars
+
+  }
+
+    this.navCtrl.push(TransconfirmPage, data);
   }
 
 
