@@ -13,19 +13,17 @@
     (ionCancel)="onSearchCancel($event)">
   </ion-searchbar>
 
-  <ion-card *ngFor="let result of skills | async;"  (click)="confirmTrans(result)">
-    <ion-card-header>
-      <img style="float: left;" width="20" height="20" src="profile_pic.png">
-      <span style="float: right;">
-        {{ result["keywords"].split(';')[0] | capWord }}
-      </span>
-
-    </ion-card-header>
-
+  <ion-card *ngFor="let result of skills"  (click)="confirmTrans(result)">
     <ion-card-content>
-      <p>{{result["name"]}}</p>
-      <p>{{result["distance"]}}</p>
-      <p>{{result["stars"]}}</p>
+      <img style="float: left; width: 20%;" src="profile_pic.png">
+      <div style="float: left; width: 60%;">
+        <p>{{result["name"]}}</p>
+        <p>{{ result["keywords"].split(';')[0] | capWord }}</p>
+        <ion-icon *ngFor="let starCount of result['starRange']" name="star"></ion-icon>
+      </div>
+      <div style="float: left; width: 20%;">
+        <p>{{result["distance"]}} miles</p>
+      </div>
     </ion-card-content>
   </ion-card>
 

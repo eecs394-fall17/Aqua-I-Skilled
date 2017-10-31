@@ -15,16 +15,30 @@ export class SearchPage {
   skills:any;
   skillSearch:any;
 
+  ngOnInit() {
+    this.dbProv.db.list("skills").valueChanges()
+      .subscribe(skills => {
+        this.skills = skills;
+        for (var i = 0; i < this.skills.length; i++) {
+          var star = parseInt(this.skills[i]['stars']);
+          this.skills[i]['starRange'] = Array(star);
+        }
+      });
+  }
+
   constructor(public navCtrl: NavController,
               private dbProv: FirebaseProvider) {
-    this.skills = dbProv.db.list("skills").valueChanges();
-    /*subscribe(skills => {
-      this.skills = skills;
-    });*/
+  }
+
+  addStarAttr() {
   }
 
   onSearchInput(event) {
     console.log("Search executed");
+    filteredSkills = []
+    // Populate filteredSkills with object in 'skills' that match the keyword searched
+    // If no keyword, don't filter
+    // this.skills = filteredSkills;
   }
 
   onSearchCancel(event) {
