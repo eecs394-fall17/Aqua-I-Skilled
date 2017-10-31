@@ -8,6 +8,11 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class TransconfirmPage {
 
+  giver:any;
+  skill:any;
+  num_stars:any;
+  dist:any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
