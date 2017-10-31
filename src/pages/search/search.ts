@@ -3,25 +3,24 @@ import { NavController } from 'ionic-angular';
 
 import { TransconfirmPage } from '../transconfirm/transconfirm';
 
+import { FirebaseProvider } from '../../providers/firebase';
+
 @Component({
   selector: 'page-search',
-  templateUrl: 'search.html'
+  templateUrl: 'search.html',
+  providers: [FirebaseProvider],
 })
 export class SearchPage {
-
+  
+  skills:any;
   skillSearch:any;
 
-  public results:any;
-
-  constructor(public navCtrl: NavController) {
-    this.results = [
-      {
-        keywords: ["oil change", "automotive"],
-        name: "Daniel",
-        distance: "0.8 miles",
-        stars: 4,
-      },
-    ];
+  constructor(public navCtrl: NavController,
+              private dbProv: FirebaseProvider) {
+    this.skills = dbProv.db.list("skills").valueChanges();
+    /*subscribe(skills => {
+      this.skills = skills;
+    });*/
   }
 
   onSearchInput(event) {
@@ -32,16 +31,13 @@ export class SearchPage {
     console.log("Search cancelled");
   }
 
-  confirmTrans(results){
-  let data = {
-    skill: this.results[0].keywords[0],
-    giver: this.results[0].name,
-    dist: this.results[0].distance,
-    num_stars: this.results[0].stars
-
-  }
-
-    this.navCtrl.push(TransconfirmPage, data);
+  confirmTrans(result){
+    this.navCtrl.push(TransconfirmPage, {
+      skill: result.keywords.split(";")[0],
+      giver: result.name,
+      dist: result.distance,
+      num_stars: result.stars
+    });
   }
 
 
