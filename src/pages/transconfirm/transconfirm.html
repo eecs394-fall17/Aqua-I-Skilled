@@ -1,18 +1,41 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Transaction Page
+      I-Skilled
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <div padding >Name: {{giver}}</div>
-  <div padding >Skill: {{skill}}</div>
-  <div padding >Description: Will change your oil and check for leakages. </div>
-  <div padding >Distance: {{dist}}</div>
-  <div padding >Number of Stars: {{num_stars}}</div>
-  <div padding >When: 12:00</div>
-  <div padding >Where: Shell Gas Station on Central St.</div>
-  <button disabled=true ion-button item-right [color]="ionicNamedColor">Book</button>
+  <h1>{{skill.keywords.split(";")[0] | capWord}}</h1>
+  
+  <div class="profile-holder">
+    <img class="skill-img" src="profile_pic.png">
+    <div class="skill-leftinfo">
+      <div class="skill-name">
+        {{skill["name"]}}
+      </div>
+      <div class="skill-desc">
+        {{ skill["keywords"].split(';')[0] | capWord }}
+      </div>
+      <div class="skill-star">
+        <ion-icon *ngFor="let starCount of skill['starRange']" name="star"></ion-icon>
+      </div>
+    </div>
+    <div class="skill-rightinfo">
+      <div class="skill-dist">
+        {{skill["distance"]}} miles
+      </div>
+    </div>
+  </div>
+  <div style="clear: both;"></div>
+
+  <div class="schedule-holder">
+    <div>When: 12:00</div>
+    <div>Where: Shell Gas Station on Central St.</div>
+  </div>                                                                                                    
+  <div class="book-holder">
+    <div class="book-info">$20</div>
+    <button disabled=true ion-button item-right [color]="ionicNamedColor">Book</button>
+  </div>
 </ion-content>

@@ -15,14 +15,22 @@
 
   <ion-card *ngFor="let result of skills"  (click)="confirmTrans(result)">
     <ion-card-content>
-      <img style="float: left; width: 20%;" src="profile_pic.png">
-      <div style="float: left; width: 60%;">
-        <p>{{result["name"]}}</p>
-        <p>{{ result["keywords"].split(';')[0] | capWord }}</p>
-        <ion-icon *ngFor="let starCount of result['starRange']" name="star"></ion-icon>
+      <img class="skill-img" src="profile_pic.png">
+      <div class="skill-leftinfo">
+        <div class="skill-name">
+          {{result["name"]}}
+        </div>
+        <div class="skill-desc">
+          {{ result["keywords"].split(';')[0] | capWord }}
+        </div>
+        <div class="skill-star">
+          <ion-icon *ngFor="let starCount of result['starRange']" name="star"></ion-icon>
+        </div>
       </div>
-      <div style="float: left; width: 20%;">
-        <p>{{result["distance"]}} miles</p>
+      <div class="skill-rightinfo">
+        <div class="skill-dist">
+          {{result["distance"]}} miles
+        </div>
       </div>
     </ion-card-content>
   </ion-card>

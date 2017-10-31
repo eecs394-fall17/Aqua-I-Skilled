@@ -8,19 +8,11 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class TransconfirmPage {
 
-  giver:any;
   skill:any;
-  num_stars:any;
-  dist:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
-    this.giver = this.navParams.get('giver');
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams) {
     this.skill = this.navParams.get('skill');
-    this.num_stars = this.navParams.get('num_stars');
-    this.dist = this.navParams.get('dist');
+    console.log(this.skill);
   }
-
 }
