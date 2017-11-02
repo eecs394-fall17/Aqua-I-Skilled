@@ -15,7 +15,7 @@
 
   <ion-card *ngFor="let result of skills"  (click)="confirmTrans(result)">
     <ion-card-content>
-      <img class="skill-img" src="../../assets/imgs/greyCircle.png">
+      <img class="skill-img" src="../../assets/imgs/defaultProfile.jpg">
       <div class="skill-leftinfo">
         <div class="skill-name">
           {{ result["keywords"].split(';')[0] | capWord }}
