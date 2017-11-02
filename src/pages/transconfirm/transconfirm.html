@@ -7,35 +7,50 @@
 </ion-header>
 
 <ion-content padding>
-  <h1>{{skill.keywords.split(";")[0] | capWord}}</h1>
+  <h1 style="font-size: 35px; text-align: center;">{{skill.keywords.split(";")[0] | capWord}}</h1>
   
   <div class="profile-holder">
-    <img class="skill-img" src="profile_pic.png">
-    <div class="skill-leftinfo">
-      <div class="skill-name">
+    <img class="profile-img" src="profile_pic.png">
+    <div class="profile-info">
+      <div class="profile-name">
         {{skill["name"]}}
       </div>
-      <div class="skill-desc">
-        {{ skill["keywords"].split(';')[0] | capWord }}
+      <div class="profile-dist">
+        {{skill["distance"]}} miles
       </div>
-      <div class="skill-star">
+      <div class="profile-star">
         <ion-icon *ngFor="let starCount of skill['starRange']" name="star"></ion-icon>
       </div>
     </div>
-    <div class="skill-rightinfo">
-      <div class="skill-dist">
-        {{skill["distance"]}} miles
-      </div>
-    </div>
+    
+    <div style="clear: both;"></div>
   </div>
-  <div style="clear: both;"></div>
 
   <div class="schedule-holder">
-    <div>When: 12:00</div>
-    <div>Where: Shell Gas Station on Central St.</div>
-  </div>                                                                                                    
-  <div class="book-holder">
-    <div class="book-info">$20</div>
-    <button disabled=true ion-button item-right [color]="ionicNamedColor">Book</button>
+    <div>Appointment overview for {{skill["name"]}}</div>
   </div>
+
+  <ion-list>
+    <ion-item>
+      <ion-icon name="compass" item-start></ion-icon>
+      <ion-label>
+        5198 N Westerfield Dr
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="clock" item-start></ion-icon>
+      <ion-label>
+        6:00 pm
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <div class="book-holder">
+      <div class="book-info">$20</div>
+      <button disabled=true ion-button large item-right [color]="ionicNamedColor">Book</button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

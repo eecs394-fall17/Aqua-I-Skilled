@@ -1,45 +1,40 @@
 page-transconfirm {
-  .skill-img {
+
+  .profile-img {
     float: left; 
-    width: 20%;
-    padding-right: 10px;
+    width: 30%;
+    margin-left: 10%;
   }
 
-  .skill-leftinfo {
-    padding-left: 5%;
+  .profile-info {
     float: left;
-    width: 60%;
+    width: 40%;
+    margin-left: 10%;
   }
 
-  .skill-img,
-  .skill-leftinfo {
-    margin-bottom: 10px;
+  .profile-name,
+  .profile-dist,
+  .profile-star {
+    color: white;
+    padding-bottom: 5px;
   }
 
-  .skill-name {
-    font-size: 22px;
+  .profile-name {
+    font-size: 26px;
   }
 
-  .skill-desc {
-    font-size: 15px;
-  }
-
-  .skill-star ion-icon {
+  .profile-star ion-icon {
     font-size: 18px;
   }
 
-  .skill-dist {
-    text-align: center;
+  .profile-dist {
     font-size: 16px;
   }
 
-  .skill-rightinfo {
-    float: left;
-    width: 20%;
-  }
-
   .profile-holder {
-    margin: auto;
+    padding: 20px 30px;
+    background-color: #66B8E7;
+    border: 3px solid #B7DDF4;
   }
 
   .schedule-holder * {
@@ -48,17 +43,19 @@ page-transconfirm {
   }
 
   .book-holder {
+    display: flex;
+    justify-content: space-evenly;
   }
 
   .book-info {
-    float: left;
+    display: table-cell;
     text-align: center;
-    width: 50%;
-    margin: 10px 0px;
-    font-size: 18px;
+    font-size: 30px;
+    margin-top: auto;
+    margin-bottom: auto;
   }
 
   .book-button {
-    float: left;
+    font-size: 30px;
   }
 }

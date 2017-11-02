@@ -18,10 +18,10 @@
       <img class="skill-img" src="profile_pic.png">
       <div class="skill-leftinfo">
         <div class="skill-name">
-          {{result["name"]}}
+          {{ result["keywords"].split(';')[0] | capWord }}
         </div>
         <div class="skill-desc">
-          {{ result["keywords"].split(';')[0] | capWord }}
+          {{result["name"]}}
         </div>
         <div class="skill-star">
           <ion-icon *ngFor="let starCount of result['starRange']" name="star"></ion-icon>
