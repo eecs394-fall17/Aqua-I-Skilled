@@ -8,7 +8,7 @@
 
 <ion-content padding>
   <h1 style="font-size: 35px; text-align: center;">{{skill.keywords.split(";")[0] | capWord}}</h1>
-  
+
   <div class="profile-holder">
     <img class="profile-img" src="../../assets/imgs/defaultProfile.jpg">
     <div class="profile-info">
@@ -22,12 +22,14 @@
         <ion-icon *ngFor="let starCount of skill['starRange']" name="star"></ion-icon>
       </div>
     </div>
-    
+
     <div style="clear: both;"></div>
   </div>
 
   <div class="schedule-holder">
-    <div>Appointment overview for {{skill["name"]}}</div>
+    <!-- temporary change for demo 1; making name skill receiver
+    from user story (Jennifer) instead of skill giver (Daniel) -->
+    <div>Appointment overview for Jennifer <!-- {{skill["name"]}}--></div> 
   </div>
 
   <ion-list>
