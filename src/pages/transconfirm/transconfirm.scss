@@ -1,7 +1,7 @@
 page-transconfirm {
 
   .profile-img {
-    float: left; 
+    float: left;
     width: 30%;
     margin-left: 10%;
   }
@@ -58,4 +58,27 @@ page-transconfirm {
   .book-button {
     font-size: 30px;
   }
+
+  .lesson-icon {
+    color: #d9d9d9;
+    width: 40%;
+    height: 60px;
+    font-size: 50px;
+    text-align: center;
+  }
+
+  .lesson-info {
+    font-size: 20px;
+  }
+
+  .lesson * {
+    float: left;
+  }
+
+  .lesson {
+    clear: both;
+    display: flex;
+    align-items: center;
+  }
+
 }
