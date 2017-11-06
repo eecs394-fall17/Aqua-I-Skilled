@@ -19,6 +19,7 @@ import { CapWord } from '../pipes/capWord';
 
 // Providers
 import { FirebaseProvider } from '../providers/firebase';
+import { SearchProvider } from '../providers/search';
 
 // Firebase config
 import { AngularFireModule } from 'angularfire2';
@@ -67,6 +68,7 @@ export const firebaseConfig = {
     StatusBar,
     SplashScreen,
     FirebaseProvider,
+    SearchProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
