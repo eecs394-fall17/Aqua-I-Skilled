@@ -21,7 +21,7 @@ export class SearchPage {
       .subscribe(skills => {
         this.skills = skills;
         for (var i = 0; i < this.skills.length; i++) {
-          var star = parseInt(this.skills[i]['stars']);
+          var star = parseInt(this.skills[i]['rating']);
           this.skills[i]['starRange'] = Array(star);
         }
         //console.log("Filtering: ");
@@ -58,6 +58,5 @@ export class SearchPage {
       skill: result
     });
   }
-
 
 }
