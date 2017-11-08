@@ -26,26 +26,34 @@
     <div style="clear: both;"></div>
   </div>
 
-  <div class="schedule-holder">
-    <div>{{skill["name"]}}'s Profile</div>
-    <!-- trying to implement toggle -->
-      <ion-item *ngFor="let s of skills">
-      <ion-icon name ="arrow-down" color="primary" item-left (click)="toggleDetails(s)">
-      </ion-icon>
-      <div *ngIf="s.showDetails"> Test to see if it Toggles
+  <div class="accordion">
+
+    <div class="details-holder" (click)="toggleAccordion(1)" [ngClass]="{'section-active': openHolder == 1, 'section': openHolder != 1}">
+      <div>{{skill["name"]}}'s Profile</div>
+
+      <div *ngIf="openHolder == 1">
+        <p>{{skill["description"]}}</p>
       </div>
-      </ion-item>
-    <!-- end of trying to implement toggle -->
+    </div>
+
+    <div class="schedule-holder" (click)="toggleAccordion(2)" [ngClass]="{'section-active': openHolder == 2, 'section': openHolder != 2}">
+      <div>{{skill["name"]}}'s Schedule</div>
+
+      <div *ngIf="openHolder == 2">
+        <a>See all openings</a>
+        <!--
+        <ion-item *ngFor="let s of skills">
+        <ion-icon name ="arrow-down" color="primary" item-left (click)="toggleDetails(s)">
+        </ion-icon>
+        <div *ngIf="s.showDetails"> Test to see if it Toggles
+        </div>
+        </ion-item>
+        -->
+      </div>
+    </div>
+
   </div>
-  <button ion-button large item-right [color]="ionicNamedColor" (click)="confirmTrans(result)"> See Booking Page</button>
+
+  <button ion-button large item-right [color]="ionicNamedColor" (click)="confirmTrans(skill)"> See Booking Page</button>
 
 </ion-content>
-
-<ion-footer>
-  <ion-toolbar>
-    <div class="book-holder">
-      <div class="book-info">$20</div>
-      <button disabled=true ion-button large item-right [color]="ionicNamedColor">Book</button>
-    </div>
-  </ion-toolbar>
-</ion-footer>

@@ -37,9 +37,22 @@ page-profile {
     border: 3px solid #B7DDF4;
   }
 
+  .accordion > div {
+    border-bottom: 2px solid grey;
+  }
+
+  .accordion > .section-active {
+    background-color: white;
+  }
+
+  .accordion > .section {
+    background-color: grey;
+  }
+
+  .details-holder *,
   .schedule-holder * {
     font-size: 18px;
-    margin: 10px 0px;
+    padding: 10px 0px;
   }
 
   .book-holder {

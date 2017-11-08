@@ -8,30 +8,39 @@ import { TransconfirmPage } from '../transconfirm/transconfirm';
   templateUrl: 'profile.html'
 })
 export class ProfilePage {
-skill:any;
 
-constructor(public navCtrl: NavController,
-            public navParams: NavParams) {
-  this.skill = this.navParams.get('skill');
-  console.log(this.skill);
-}
+  skill:any;
 
-// trying to implement toggle
-toggleDetails(skills) {
-    if (skills.showDetails) {
-    skills.showDetails = false;
-    skills.icon = 'ios-add-circle-outline';
-  } else {
-    skills.showDetails = true;
-    skills.icon = 'ios-remove-circle-outline';
+  // Used for accordion dropdown
+  openHolder:any;
+
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams) {
+    
+    this.skill = this.navParams.get('skill');
+    this.openHolder = 1;
   }
-}
 
-// temporary button that takes you to the transConfirm page
-confirmTrans(result){
-  this.navCtrl.push(TransconfirmPage, {
-    skill: result
-  });
-}
+  // trying to implement toggle
+  toggleDetails(skills) {
+      if (skills.showDetails) {
+      skills.showDetails = false;
+      skills.icon = 'ios-add-circle-outline';
+    } else {
+      skills.showDetails = true;
+      skills.icon = 'ios-remove-circle-outline';
+    }
+  }
+
+  // temporary button that takes you to the transConfirm page
+  confirmTrans(skill){
+    this.navCtrl.push(TransconfirmPage, {
+      skill: skill
+    });
+  }
+
+  toggleAccordion(ind) {
+    this.openHolder = ind;
+  }
 
 }
