@@ -38,7 +38,7 @@ page-profile {
   }
 
   .accordion > div {
-    border-bottom: 2px solid grey;
+    border-bottom: 2px solid #F3F3F3;
   }
 
   .accordion > .section-active {
@@ -46,13 +46,37 @@ page-profile {
   }
 
   .accordion > .section {
-    background-color: grey;
   }
 
-  .details-holder *,
-  .schedule-holder * {
+  .details-holder * {
     font-size: 18px;
     padding: 10px 0px;
+  }
+
+  .schedule-holder {
+    font-size: 18px;
+  }
+
+  .lesson-holder {
+    font-size: 18px;
+    background-color: #F3F3F3;
+  }
+
+  .lessonRadio,
+  .lessonTime {
+    float: left;
+    font-size: 22px;
+    padding: 0px 10px;
+    margin: 15px 0px;
+  }
+
+  .lessonTime {
+    width: 80%;
+  }
+
+  .lessonRadio {
+    height: 30px;
+    width: 20%;
   }
 
   .book-holder {
@@ -97,10 +121,17 @@ page-profile {
   // split up so can get multiple lines of text like the wireframes they sent earlier
   .profileTitle {
     font-size: 27px;
+    padding: 10px 0px;
   }
 
   .profileDesc {
     font-size: 22px;
+  }
+
+  .acc-icon {
+    font-size: 25px;
+    float: right;
+    padding-right: 5%;
   }
 
   .reviewer {

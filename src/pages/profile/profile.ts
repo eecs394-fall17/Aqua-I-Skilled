@@ -11,6 +11,9 @@ export class ProfilePage {
 
   skill:any;
 
+  staticLessons:any;
+  lessonTime:any;
+
   // Used for accordion dropdown
   openHolder:any;
 
@@ -19,6 +22,11 @@ export class ProfilePage {
     
     this.skill = this.navParams.get('skill');
     this.openHolder = 1;
+
+    this.staticLessons = [
+      { "time":"8:00pm", date:"Tue Nov 7" },
+      { "time":"3:00pm", date:"Thu Nov 9" },
+    ]
   }
 
   // trying to implement toggle
@@ -40,7 +48,10 @@ export class ProfilePage {
   }
 
   toggleAccordion(ind) {
-    this.openHolder = ind;
+    if (this.openHolder != ind)
+      this.openHolder = ind;
+    else
+      this.openHolder = (ind + 1) % 2;
   }
 
 }
