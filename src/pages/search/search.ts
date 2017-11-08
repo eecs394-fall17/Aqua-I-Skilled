@@ -43,8 +43,10 @@ export class SearchPage {
   }
 
   filterSkills() {
-    if (this.skillSearch == "")
+    if (this.skillSearch == "") {
+      this.skills = []; 
       return;
+    }
 
     this.skills = this.searchProv.filter(this.skills, this.skillSearch);
   }
