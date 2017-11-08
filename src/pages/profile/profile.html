@@ -58,7 +58,8 @@
         <div>
           <div *ngFor="let lesson of staticLessons; let i = index" class="lesson-holder">
             <input class="lessonRadio" type="radio" name="lesson" value="{{i}}">
-            <div class="lessonTime">{{lesson.date + "  " + lesson.time}}</div>
+            <div class="lessonTime">{{lesson.date + "  " + lesson.time}} </div>
+            <div class="lessonPlace">{{lesson.place}} <ion-icon name="pin"></ion-icon></div>
             <div style="clear: both;"></div>
           </div>
         </div>

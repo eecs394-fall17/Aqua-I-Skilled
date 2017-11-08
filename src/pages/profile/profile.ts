@@ -19,13 +19,15 @@ export class ProfilePage {
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams) {
-    
+
     this.skill = this.navParams.get('skill');
     this.openHolder = 1;
+    var placeString = this.skill["name"];
+    var placeVar = placeString + "'s Place";
 
     this.staticLessons = [
-      { "time":"8:00pm", date:"Tue Nov 7" },
-      { "time":"3:00pm", date:"Thu Nov 9" },
+      { "time":"8:00pm", date:"Tue Nov 7", "place": placeVar },
+      { "time":"3:00pm", date:"Thu Nov 9", "place": placeVar },
     ]
   }
 
