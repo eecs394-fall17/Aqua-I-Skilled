@@ -21,7 +21,8 @@ export class ProfilePage {
               public navParams: NavParams) {
 
     this.skill = this.navParams.get('skill');
-    this.openHolder = 1;
+    this.openHolder = 0;
+    this.lessonTime = 0;
     var placeString = this.skill["name"];
     var placeVar = placeString + "'s Place";
 
@@ -45,8 +46,13 @@ export class ProfilePage {
   // temporary button that takes you to the transConfirm page
   confirmTrans(skill){
     this.navCtrl.push(TransconfirmPage, {
-      skill: skill
+      skill: skill,
+      lessonInfo: this.staticLessons[this.lessonTime],
     });
+  }
+
+  toggleLessonRadio(ind) {
+    this.lessonTime = ind;
   }
 
   toggleAccordion(ind) {

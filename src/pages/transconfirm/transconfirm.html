@@ -1,8 +1,9 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      I-Skilled
-    </ion-title>
+    <div class="app-header">
+      <div style="width: 30%;"><img src="../../assets/imgs/logo.png"></div>
+      <div style="width: 70%;"><img src="../../assets/imgs/title.png"></div>
+    </div>
   </ion-navbar>
 </ion-header>
 
@@ -27,7 +28,9 @@
   </div>
 
   <div class="schedule-holder">
-    <div>Appointment overview for {{skill["name"]}}</div>
+    <div style="padding-bottom: 10px; border-bottom: 1px solid grey;">
+      Lesson overview for {{skill["name"]}}
+    </div>
   </div>
 
   <ion-list>
@@ -41,7 +44,7 @@
     <div class="lesson">
       <ion-icon class="lesson-icon" name="clock" item-start></ion-icon>
       <div class="lesson-info">
-        6:00 pm
+        {{lessonInfo.date + "  " + lessonInfo.time}}
       </div>
     </div>
   </ion-list>
@@ -51,7 +54,7 @@
   <ion-toolbar>
     <div class="book-holder">
       <div class="book-info">$20</div>
-      <button disabled=true ion-button large item-right [color]="ionicNamedColor">Book</button>
+      <button disabled=true ion-button large item-right [color]="ionicNamedColor">Confirm</button>
     </div>
   </ion-toolbar>
 </ion-footer>

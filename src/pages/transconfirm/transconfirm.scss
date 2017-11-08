@@ -1,5 +1,7 @@
 page-transconfirm {
 
+  @import "../../theme/header";
+
   .profile-img {
     float: left;
     width: 30%;
@@ -80,7 +82,10 @@ page-transconfirm {
     clear: both;
     display: flex;
     align-items: center;
+    border-bottom: 1px solid grey;
+    padding: 10px 0px;
   }
+
   // split up so can get multiple lines of text like the wireframes they sent earlier
 
 }
