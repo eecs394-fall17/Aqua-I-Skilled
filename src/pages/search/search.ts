@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-import { TransconfirmPage } from '../transconfirm/transconfirm';
+import { ProfilePage } from '../profile/profile';
 
 import { FirebaseProvider } from '../../providers/firebase';
+import { SearchProvider } from '../../providers/search';
 
 @Component({
   selector: 'page-search',
@@ -11,7 +12,7 @@ import { FirebaseProvider } from '../../providers/firebase';
   providers: [FirebaseProvider],
 })
 export class SearchPage {
-  
+
   skills:any;
   skillSearch:any;
 
@@ -20,23 +21,24 @@ export class SearchPage {
       .subscribe(skills => {
         this.skills = skills;
         for (var i = 0; i < this.skills.length; i++) {
-          var star = parseInt(this.skills[i]['stars']);
+          var star = parseInt(this.skills[i]['rating']);
           this.skills[i]['starRange'] = Array(star);
         }
-        console.log("Filtering: ");
+        //console.log("Filtering: ");
         this.filterSkills();
       });
   }
 
   constructor(public navCtrl: NavController,
-              private dbProv: FirebaseProvider) {
+              private dbProv: FirebaseProvider,
+              private searchProv: SearchProvider) {
     this.skillSearch = "";
     this.pullFilterSkills();
   }
 
   onSearchInput(event) {
     this.skillSearch = event.target.value;
-    console.log("Search executing: " + this.skillSearch);
+    //console.log("Search executing: " + this.skillSearch);
     this.pullFilterSkills();
   }
 
@@ -44,33 +46,17 @@ export class SearchPage {
     if (this.skillSearch == "")
       return;
 
-    var filteredSkills = [];
-    for (var i = 0; i < this.skills.length; i++) {
-      var keywords = this.skills[i]['keywords'].split(';');
-      var keywordFound = false;
-      for (var j = 0; j < keywords.length; j++) {
-        if (keywords[j] == this.skillSearch) {
-          keywordFound = true;
-          break;
-        }
-      }
-      if (keywordFound) {
-        filteredSkills.push(this.skills[i]);
-      }
-    }
-    console.log(filteredSkills);
-    this.skills = filteredSkills;
+    this.skills = this.searchProv.filter(this.skills, this.skillSearch);
   }
 
   onSearchCancel(event) {
-    console.log("Search cancelled");
+    //console.log("Search cancelled");
   }
 
   confirmTrans(result){
-    this.navCtrl.push(TransconfirmPage, { 
+    this.navCtrl.push(ProfilePage, {
       skill: result
     });
   }
-
 
 }

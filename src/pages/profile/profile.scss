@@ -1,0 +1,175 @@
+page-profile {
+
+  @import "../../theme/header";
+
+  .hacky-margin {
+    margin-left: -30%;
+    margin-right: -30%;
+    padding-left: 30%;
+    padding-right: 30%;
+  }
+
+  .profile-img {
+    float: left;
+    width: 30%;
+    margin-left: 10%;
+  }
+
+  .profile-info {
+    float: left;
+    width: 40%;
+    margin-left: 10%;
+  }
+
+  .profile-name,
+  .profile-dist,
+  .profile-star {
+    color: white;
+    padding-bottom: 5px;
+  }
+
+  .profile-name {
+    font-size: 26px;
+  }
+
+  .profile-star ion-icon {
+    font-size: 18px;
+  }
+
+  .profile-dist {
+    font-size: 16px;
+  }
+
+  .profile-holder {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #66B8E7;
+    border: 3px solid #B7DDF4;
+  }
+
+  .accordion > div {
+    border-bottom: 2px solid #F3F3F3;
+  }
+
+  .accordion > .section-active {
+    background-color: white;
+  }
+
+  .accordion > .section {
+  }
+
+  .details-holder * {
+    font-size: 18px;
+    padding: 10px 0px;
+  }
+
+  .schedule-holder {
+    font-size: 18px;
+  }
+
+  .lesson-holder {
+    font-size: 18px;
+    background-color: #F3F3F3;
+    padding-bottom: 15px;
+  }
+
+  .lessonRadio,
+  .lessonTime {
+    float: left;
+    font-size: 22px;
+    padding: 0px 10px;
+    margin: 10px 0px 5px 0px;
+  }
+
+  .lessonPlace {
+    float: left;
+    font-size: 15px;
+    padding: 0px 10px;
+    width: 80%;
+
+  }
+
+  .lessonTime {
+    width: 80%;
+  }
+
+  .lessonRadio {
+    height: 30px;
+    width: 20%;
+  }
+
+  .book-holder {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .book-info {
+    display: table-cell;
+    text-align: center;
+    font-size: 30px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .book-button {
+    font-size: 30px;
+  }
+
+  .lesson-icon {
+    color: #d9d9d9;
+    width: 40%;
+    height: 60px;
+    font-size: 50px;
+    text-align: center;
+  }
+
+  .lesson-info {
+    font-size: 20px;
+    word-break: break-all;
+  }
+
+  .lesson * {
+    float: left;
+  }
+
+  .lesson {
+    clear: both;
+    display: flex;
+    align-items: center;
+  }
+  // split up so can get multiple lines of text like the wireframes they sent earlier
+  .profileTitle {
+    font-size: 27px;
+    padding: 10px 0px;
+  }
+
+  .profileDesc {
+    font-size: 22px;
+  }
+
+  .acc-icon {
+    font-size: 25px;
+    float: right;
+    padding-right: 5%;
+  }
+
+  .reviewer {
+    padding: 0;
+
+  }
+
+  .reviewDate {
+    color: grey;
+    padding-top: 0;
+    padding-bottom: 10px;;
+  }
+
+  .reviewerPhoto {
+    float: left;
+    width: 15%;
+    height: 65px;
+    padding-top: 0;
+  }
+
+
+}

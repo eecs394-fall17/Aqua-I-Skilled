@@ -1,4 +1,18 @@
 page-search {
+  
+  @import "../../theme/header";
+
+  .search-results ion-card:nth-child(odd) {
+    background-color: #DAEEF9;
+  }
+
+  .profile-img {
+    float: left;
+    max-width: 80px;
+    max-height: 80px;
+    width: 20%;
+  }
+
   ion-card img {
     width: auto;
   }

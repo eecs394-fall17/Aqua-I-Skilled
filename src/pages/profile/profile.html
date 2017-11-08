@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-navbar>
+    <div class="app-header">
+      <div style="width: 30%;"><img src="../../assets/imgs/logo.png"></div>
+      <div style="width: 70%;"><img src="../../assets/imgs/title.png"></div>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- <h1 style="font-size: 35px; text-align: center;">{{skill.keywords.split(";")[0] | capWord}}</h1> -->
+
+  <div class="profile-holder hacky-margin">
+    <!--<img class="profile-img" src="../../assets/imgs/defaultProfile.jpg">-->
+    <img class="profile-img" src="{{'../../assets/imgs/profiles/' + skill['name'].split(' ').join('%20') + '.jpg'}}">
+    <div class="profile-info">
+      <div class="profile-name">
+        {{skill["name"]}}
+      </div>
+      <div class="profile-dist">
+        {{skill["distance"]}} miles
+      </div>
+      <div class="profile-star">
+        <ion-icon *ngFor="let starCount of skill['starRange']" name="star"></ion-icon>
+        <div style="float: right; padding-right: 40%;">{{skill['rating']}}</div>
+      </div>
+    </div>
+
+    <div style="clear: both;"></div>
+  </div>
+
+  <div class="accordion">
+
+
+    <div class="details-holder" [ngClass]="{'section-active': openHolder == 0, 'section': openHolder != 0}">
+      <div (click)="toggleAccordion(0)" class="profileTitle">
+        {{skill["name"]}}'s Profile
+        <ion-icon *ngIf="openHolder == 0" class="acc-icon" name="arrow-down" color="dark" item-right></ion-icon>
+        <ion-icon *ngIf="openHolder == 1" class="acc-icon" name="arrow-forward" color="dark" item-right></ion-icon>
+      </div>
+      <div *ngIf="openHolder == 0">
+        <div class="profileDesc">{{skill["description"]}}</div>
+        <div><strong>Reviews </strong>(1):</div>
+        <div>
+          <img class="reviewerPhoto" src="../../assets/imgs/defaultProfile.jpg">
+          <div class="reviewer">Anonymous</div>
+          <div class="reviewDate">12 November, 7:31 PM</div>
+        </div>
+        <div>{{skill["review"]}}</div>
+      </div>
+    </div>
+
+    <div class="schedule-holder" [ngClass]="{'section-active': openHolder == 1, 'section': openHolder != 1}">
+      <div (click)="toggleAccordion(1)" class="profileTitle">
+        {{skill["name"]}}'s Schedule
+        <ion-icon *ngIf="openHolder == 1" class="acc-icon" name="arrow-down" color="dark"></ion-icon>
+        <ion-icon *ngIf="openHolder == 0" class="acc-icon" name="arrow-forward" color="dark"></ion-icon>
+      </div>
+
+      <div *ngIf="openHolder == 1">
+        <div>
+          <div *ngFor="let lesson of staticLessons; let i = index" class="lesson-holder hacky-margin">
+            <input *ngIf="lessonTime == i" class="lessonRadio" (click)="toggleLessonRadio(i)" type="radio" name="lesson" value="{{i}}" checked>
+            <input *ngIf="lessonTime != i" class="lessonRadio" (click)="toggleLessonRadio(i)" type="radio" name="lesson" value="{{i}}">
+
+            <div class="lessonTime">{{lesson.date}}&emsp;&emsp;{{lesson.time}}</div>
+            <div class="lessonPlace">{{lesson.place}} <ion-icon name="pin"></ion-icon></div>
+            <div style="clear: both;"></div>
+          </div>
+        </div>
+        <a>See all openings</a>
+        <!--
+        <ion-item *ngFor="let s of skills">
+        <ion-icon name ="arrow-down" color="primary" item-left (click)="toggleDetails(s)">
+        </ion-icon>
+        <div *ngIf="s.showDetails"> Test to see if it Toggles
+        </div>
+        </ion-item>
+        -->
+      </div>
+    </div>
+  </div>
+
+  <div class="book-holder">
+    <div class="book-info"><strong>$20</strong></div>
+    <button ion-button large float-right [color]="ionicNamedColor" (click)="confirmTrans(skill)">Request</button>
+  </div>
+
+</ion-content>

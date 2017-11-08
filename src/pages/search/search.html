@@ -1,10 +1,15 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>I-Skilled</ion-title>
+    <div class="app-header">
+      <div style="margin-left: 10%; width: 30%;"><img src="../../assets/imgs/logo.png"></div>
+      <div style="width: 50%;"><img src="../../assets/imgs/title.png"></div>
+    </div>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+
+  <p style="margin: 0px; text-align: center; font-size: 25px;">What would you like to learn today?</p>
 
   <ion-searchbar
     [(ngModel)]="skillSearch"
@@ -13,9 +18,10 @@
     (ionCancel)="onSearchCancel($event)">
   </ion-searchbar>
 
-  <ion-card *ngFor="let result of skills"  (click)="confirmTrans(result)">
-    <ion-card-content>
-      <img class="skill-img" src="../../assets/imgs/defaultProfile.jpg">
+  <div class="search-results">
+  <ion-card *ngFor="let result of skills" class="search-result" (click)="confirmTrans(result)">
+    <ion-card-content>    
+      <img class="profile-img" src="{{'../../assets/imgs/profiles/' + result['name'].split(' ').join('%20') + '.jpg'}}">
       <div class="skill-leftinfo">
         <div class="skill-name">
           {{ result["keywords"].split(';')[0] | capWord }}
@@ -38,5 +44,8 @@
       </div>
     </ion-card-content>
   </ion-card>
+  </div>
+
+<!--<a (click)="insertData()">Insert Data</a>-->
 
 </ion-content>

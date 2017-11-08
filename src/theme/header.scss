@@ -1,0 +1,19 @@
+.app-header > div {
+  float: left;
+  /*display: flex;
+  align-items: center;
+  justify-content: center;*/
+}
+
+.app-header div img {
+  height: 50px;
+}
+
+.app-header > div:last-child {
+  padding-left: 2%;
+}
+
+.app-header > div:first-child {
+  text-align: right;
+  padding-right: 2%;
+}
