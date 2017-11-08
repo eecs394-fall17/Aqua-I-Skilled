@@ -11,7 +11,7 @@
   <h1 style="font-size: 35px; text-align: center;">{{skill.keywords.split(";")[0] | capWord}}</h1>
 
   <div class="profile-holder">
-    <img class="profile-img" src="../../assets/imgs/defaultProfile.jpg">
+    <img class="profile-img" src="{{'../../assets/imgs/profiles/' + skill['name'].split(' ').join('%20') + '.jpg'}}">
     <div class="profile-info">
       <div class="profile-name">
         {{skill["name"]}}

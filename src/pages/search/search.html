@@ -20,8 +20,8 @@
 
   <div class="search-results">
   <ion-card *ngFor="let result of skills" class="search-result" (click)="confirmTrans(result)">
-    <ion-card-content>
-      <img class="skill-img" src="../../assets/imgs/defaultProfile.jpg">
+    <ion-card-content>    
+      <img class="profile-img" src="{{'../../assets/imgs/profiles/' + result['name'].split(' ').join('%20') + '.jpg'}}">
       <div class="skill-leftinfo">
         <div class="skill-name">
           {{ result["keywords"].split(';')[0] | capWord }}
