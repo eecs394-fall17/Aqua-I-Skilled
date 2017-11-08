@@ -28,11 +28,20 @@
 
   <div class="accordion">
 
-    <div class="details-holder" (click)="toggleAccordion(1)" [ngClass]="{'section-active': openHolder == 1, 'section': openHolder != 1}">
-      <div>{{skill["name"]}}'s Profile</div>
 
+    <div class="details-holder" (click)="toggleAccordion(1)" [ngClass]="{'section-active': openHolder == 1, 'section': openHolder != 1}">
+      <div class="profileTitle">{{skill["name"]}}'s Profile
+        <ion-icon style="font-size: 25px;" name="arrow-down" color="dark" item-right></ion-icon>
+      </div>
       <div *ngIf="openHolder == 1">
-        <p>{{skill["description"]}}</p>
+        <div class="profileDesc">{{skill["description"]}}</div>
+        <div><strong>Reviews </strong>(1):</div>
+        <div>
+          <img class="reviewerPhoto" src="../../assets/imgs/defaultProfile.jpg">
+          <div class="reviewer">Anonymous</div>
+          <div class="reviewDate">12 November, 7:31 PM</div>
+        </div>
+        <div>{{skill["review"]}}</div>
       </div>
     </div>
 
