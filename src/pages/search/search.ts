@@ -53,6 +53,7 @@ export class SearchPage {
 
   onSearchCancel(event) {
     //console.log("Search cancelled");
+    this.skills = [];
   }
 
   confirmTrans(result){
