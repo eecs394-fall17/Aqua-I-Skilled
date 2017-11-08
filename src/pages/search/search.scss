@@ -1,4 +1,20 @@
 page-search {
+
+  .app-header > div {
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .app-header div img {
+    height: 50px;
+  }
+
+  .search-results ion-card:nth-child(odd) {
+    background-color: #DAEEF9;
+  }
+
   ion-card img {
     width: auto;
   }
