@@ -1,8 +1,8 @@
 <ion-header>
   <ion-navbar>
     <div class="app-header">
-      <div style="width: 30%;"><img src="assets/imgs/logo.png"></div>
-      <div style="width: 70%;"><img src="assets/imgs/title.png"></div>
+      <div style="width: 30%;"><img src="./assets/imgs/logo.png"></div>
+      <div style="width: 70%;"><img src="./assets/imgs/title.png"></div>
     </div>
   </ion-navbar>
 </ion-header>
@@ -11,7 +11,7 @@
   <h1 style="font-size: 35px; text-align: center;">{{skill.keywords.split(";")[0] | capWord}}</h1>
 
   <div class="profile-holder">
-    <img class="profile-img" src="{{'assets/imgs/profiles/' + skill['name'].split(' ').join('%20') + '.jpg'}}">
+    <img class="profile-img" src="{{'./assets/imgs/profiles/' + skill['name'].split(' ').join('%20') + '.jpg'}}">
     <div class="profile-info">
       <div class="profile-name">
         {{skill["name"]}}
@@ -53,7 +53,7 @@
 <ion-footer>
   <ion-toolbar>
     <div class="book-holder">
-      <div class="book-info">$20</div>
+      <div class="book-info">20</div>
       <button disabled=true ion-button large item-right [color]="ionicNamedColor">Confirm</button>
     </div>
   </ion-toolbar>
