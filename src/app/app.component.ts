@@ -6,6 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { SearchPage } from '../pages/search/search';
 import { AddSkillPage } from '../pages/addskill/addskill';
 import { TransconfirmPage } from '../pages/transconfirm/transconfirm';
+import { ProfilePage } from '../pages/profile/profile';
 
 @Component({
   templateUrl: 'app.html'
@@ -18,9 +19,9 @@ export class MyApp {
   pages: Array<{title: string, component: any}>;
   // Navigation component: stack of pages user accesses
   @ViewChild(Nav) nav: Nav;
-  
-  constructor(platform: Platform, 
-              statusBar: StatusBar, 
+
+  constructor(platform: Platform,
+              statusBar: StatusBar,
               splashScreen: SplashScreen,
               public menu: MenuController) {
     platform.ready().then(() => {

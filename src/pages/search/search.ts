@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-import { TransconfirmPage } from '../transconfirm/transconfirm';
+import { ProfilePage } from '../profile/profile';
 
 import { FirebaseProvider } from '../../providers/firebase';
 import { SearchProvider } from '../../providers/search';
@@ -12,7 +12,7 @@ import { SearchProvider } from '../../providers/search';
   providers: [FirebaseProvider],
 })
 export class SearchPage {
-  
+
   skills:any;
   skillSearch:any;
 
@@ -54,7 +54,7 @@ export class SearchPage {
   }
 
   confirmTrans(result){
-    this.navCtrl.push(TransconfirmPage, { 
+    this.navCtrl.push(ProfilePage, {
       skill: result
     });
   }

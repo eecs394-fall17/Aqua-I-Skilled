@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content padding>
-  <h1 style="font-size: 35px; text-align: center;">{{skill.keywords.split(";")[0] | capWord}}</h1>
+  <!-- <h1 style="font-size: 35px; text-align: center;">{{skill.keywords.split(";")[0] | capWord}}</h1> -->
 
   <div class="profile-holder">
     <img class="profile-img" src="../../assets/imgs/defaultProfile.jpg">
@@ -27,24 +27,18 @@
   </div>
 
   <div class="schedule-holder">
-    <div>Appointment overview for {{skill["name"]}}</div>
+    <div>{{skill["name"]}}'s Profile</div>
+    <!-- trying to implement toggle -->
+      <ion-item *ngFor="let s of skills">
+      <ion-icon name ="arrow-down" color="primary" item-left (click)="toggleDetails(s)">
+      </ion-icon>
+      <div *ngIf="s.showDetails"> Test to see if it Toggles
+      </div>
+      </ion-item>
+    <!-- end of trying to implement toggle -->
   </div>
+  <button ion-button large item-right [color]="ionicNamedColor" (click)="confirmTrans(result)"> See Booking Page</button>
 
-  <ion-list>
-    <div class="lesson">
-      <ion-icon class="lesson-icon" name="compass" item-start></ion-icon>
-      <div class="lesson-info">
-        5198 N Westerfield Dr <br/>
-        Evanston Illinois
-      </div>
-    </div>
-    <div class="lesson">
-      <ion-icon class="lesson-icon" name="clock" item-start></ion-icon>
-      <div class="lesson-info">
-        6:00 pm
-      </div>
-    </div>
-  </ion-list>
 </ion-content>
 
 <ion-footer>
