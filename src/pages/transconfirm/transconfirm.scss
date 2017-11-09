@@ -1,6 +1,7 @@
 page-transconfirm {
 
   @import "../../theme/header";
+  @import "../../theme/main";
 
   .profile-img {
     float: left;
@@ -34,7 +35,8 @@ page-transconfirm {
   }
 
   .profile-holder {
-    padding: 20px 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     background-color: #66B8E7;
     border: 3px solid #B7DDF4;
   }
@@ -47,6 +49,7 @@ page-transconfirm {
   .book-holder {
     display: flex;
     justify-content: space-evenly;
+    color: green;
   }
 
   .book-info {
@@ -62,7 +65,7 @@ page-transconfirm {
   }
 
   .lesson-icon {
-    color: #d9d9d9;
+    color: #929292;
     width: 40%;
     height: 60px;
     font-size: 50px;

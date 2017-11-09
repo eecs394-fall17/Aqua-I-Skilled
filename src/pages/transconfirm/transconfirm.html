@@ -8,16 +8,14 @@
 </ion-header>
 
 <ion-content padding>
-  <h1 style="font-size: 35px; text-align: center;">{{skill.keywords.split(";")[0] | capWord}}</h1>
-
-  <div class="profile-holder">
+  <div class="profile-holder hacky-margin">
     <img class="profile-img" src="{{'./assets/imgs/profiles/' + skill['name'].split(' ').join('%20') + '.jpg'}}">
     <div class="profile-info">
       <div class="profile-name">
         {{skill["name"]}}
       </div>
       <div class="profile-dist">
-        {{skill["distance"]}} miles
+        {{skill["distance"]}} mi.
       </div>
       <div class="profile-star">
         <ion-icon *ngFor="let starCount of skill['starRange']" name="star"></ion-icon>
@@ -26,6 +24,8 @@
 
     <div style="clear: both;"></div>
   </div>
+  
+  <h1 style="font-size: 35px; text-align: center;">{{skill.keywords.split(";")[0] | capWord}}</h1>
 
   <div class="schedule-holder">
     <div style="padding-bottom: 10px; border-bottom: 1px solid grey;">
@@ -53,8 +53,8 @@
 <ion-footer>
   <ion-toolbar>
     <div class="book-holder">
-      <div class="book-info">20</div>
-      <button disabled=true ion-button large item-right [color]="ionicNamedColor">Confirm</button>
+      <div class="book-info">20 Pts</div>
+      <button disabled=true ion-button class="btn" color="lightblue" large item-right>Confirm</button>
     </div>
   </ion-toolbar>
 </ion-footer>
