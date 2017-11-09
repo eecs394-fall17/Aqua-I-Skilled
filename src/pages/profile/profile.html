@@ -18,7 +18,7 @@
         {{skill["name"]}}
       </div>
       <div class="profile-dist">
-        {{skill["distance"]}} miles
+        {{skill["distance"]}} mi.
       </div>
       <div class="profile-star">
         <ion-icon *ngFor="let starCount of skill['starRange']" name="star"></ion-icon>
@@ -82,8 +82,8 @@
   </div>
 
   <div class="book-holder">
-    <div class="book-info"><strong>20</strong></div>
-    <button ion-button large float-right [color]="ionicNamedColor" (click)="confirmTrans(skill)">Request</button>
+    <div class="book-info"><strong>20 Pts</strong></div>
+    <button ion-button large float-right class="btn" color="lightblue" (click)="confirmTrans(skill)">Request</button>
   </div>
 
 </ion-content>
