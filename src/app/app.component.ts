@@ -7,6 +7,8 @@ import { SearchPage } from '../pages/search/search';
 import { AddSkillPage } from '../pages/addskill/addskill';
 import { TransconfirmPage } from '../pages/transconfirm/transconfirm';
 import { ProfilePage } from '../pages/profile/profile';
+import { CreateprofilePage } from '../pages/createprofile/createprofile';
+import { EditprofilePage } from '../pages/editprofile/editprofile';
 
 @Component({
   templateUrl: 'app.html'

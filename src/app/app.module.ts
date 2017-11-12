@@ -11,6 +11,8 @@ import { SearchPage } from '../pages/search/search';
 import { AddSkillPage } from '../pages/addskill/addskill';
 import { TransconfirmPage } from '../pages/transconfirm/transconfirm';
 import { ProfilePage } from '../pages/profile/profile';
+import { CreateprofilePage } from '../pages/createprofile/createprofile';
+import { EditprofilePage } from '../pages/editprofile/editprofile';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -45,6 +47,8 @@ export const firebaseConfig = {
     SearchPage,
     AddSkillPage,
     TransconfirmPage,
+    CreateprofilePage,
+    EditprofilePage,
     ProfilePage,
     CapWord,
   ],
@@ -63,6 +67,8 @@ export const firebaseConfig = {
     HomePage,
     TabsPage,
     TransconfirmPage,
+    CreateprofilePage,
+    EditprofilePage,
     ProfilePage,
     SearchPage,
     AddSkillPage,
