@@ -37,12 +37,13 @@ export class SearchPage {
     this.skillSearch = "";
     this.pullFilterSkills();
 
-    var users = dbProv.getCollection(User, "users");
+    var users = dbProv.afs.collection<User>("users");
     //dbProv.addTo(users, new User("Dave","dave@hotmail.co","","Description"));
   }
 
   previewFile() {
-    var file    = document.querySelector('input[type=file]').files[0];
+    var file    = (<HTMLInputElement>document.querySelector('input[type=file]')).files[0];
+    //var file = document.querySelector('input[type=file]').files[0];
     var reader  = new FileReader();
 
     var dbProv = this.dbProv;

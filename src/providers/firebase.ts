@@ -23,9 +23,9 @@ export class FirebaseProvider {
     this.fst = firebase.firestore(); 
   }
 
-  getCollection(type, name) {
-    return this.afs.collection<type>(name);
-  }
+  /*getCollection(typ, name) {
+    return this.afs.collection<typ>(name);
+  }*/
 
   addTo(collection, record) {
     record.id = this.afs.createId();
