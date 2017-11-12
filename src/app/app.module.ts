@@ -26,14 +26,9 @@ import { SearchProvider } from '../providers/search';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
-export const firebaseConfig = {
-  apiKey: "AIzaSyDaZhd6nxDurrvCNuAJpIrn52jCSckY17c",
-  authDomain: "i-skilled.firebaseapp.com",
-  databaseURL: "https://i-skilled.firebaseio.com",
-  projectId: "i-skilled",
-  storageBucket: "i-skilled.appspot.com",
-  messagingSenderId: "224698285796"
-};
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+
+import { firebaseConfig } from './app.firebaseEnv';
 
 @NgModule({
   declarations: [
@@ -54,6 +49,7 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig, 'iskilled'),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    AngularFirestoreModule.enablePersistence(),
   ],
   bootstrap: [IonicApp],
   entryComponents: [

@@ -8,9 +8,39 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/dat
 import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';
 
+import * as firebase from "firebase";
+import 'firebase/firestore';
+import {AngularFirestore} from "angularfire2/firestore";
+
+import {User} from "../models/user"
+
 @Injectable()
 export class FirebaseProvider {
-  constructor(public db: AngularFireDatabase) {
-    console.log("Firebase connection");
+
+  fst:any;
+
+  constructor(public db: AngularFireDatabase, public afs: AngularFirestore) {
+    this.fst = firebase.firestore(); 
+  }
+
+  getCollection(type, name) {
+    return this.afs.collection<type>(name);
+  }
+
+  addTo(collection, record) {
+    record.id = this.afs.createId();
+    collection.add(record.toObj());
+    return record;
+  }
+
+  addImage(image64) {
+    var imgStrings = image64.split(',');
+    var img = imgStrings[imgStrings.length - 1];
+
+    var ref = firebase.storage().ref('images/testImage.jpg');
+    ref.putString(img, 'base64', { contentType: 'image/jpg' }).then(res => {
+      console.log(res);
+      console.log(res.downloadURL);
+    })
   }
 }

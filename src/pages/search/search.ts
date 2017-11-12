@@ -6,6 +6,8 @@ import { ProfilePage } from '../profile/profile';
 import { FirebaseProvider } from '../../providers/firebase';
 import { SearchProvider } from '../../providers/search';
 
+import { User } from '../../models/user'
+
 @Component({
   selector: 'page-search',
   templateUrl: 'search.html',
@@ -34,6 +36,24 @@ export class SearchPage {
               private searchProv: SearchProvider) {
     this.skillSearch = "";
     this.pullFilterSkills();
+
+    var users = dbProv.getCollection(User, "users");
+    //dbProv.addTo(users, new User("Dave","dave@hotmail.co","","Description"));
+  }
+
+  previewFile() {
+    var file    = document.querySelector('input[type=file]').files[0];
+    var reader  = new FileReader();
+
+    var dbProv = this.dbProv;
+    reader.addEventListener("load", function () {
+      //console.log(reader.result);
+      dbProv.addImage(reader.result);
+    }, false);
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
   }
 
   onSearchInput(event) {

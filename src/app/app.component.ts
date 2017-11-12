@@ -8,6 +8,9 @@ import { AddSkillPage } from '../pages/addskill/addskill';
 import { TransconfirmPage } from '../pages/transconfirm/transconfirm';
 import { ProfilePage } from '../pages/profile/profile';
 
+import { firebaseConfig } from './app.firebaseEnv';
+import * as firebase from "firebase";
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -30,6 +33,9 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
+
+    firebase.initializeApp(firebaseConfig);
+    firebase.firestore();
 
     this.pages = [
       { title: 'Search', component: SearchPage },
