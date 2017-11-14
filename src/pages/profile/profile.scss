@@ -46,10 +46,16 @@ page-profile {
   }
 
   .accordion > .section-active {
-    background-color: white;
+    background-color: grey;
   }
 
   .accordion > .section {
+  }
+
+  .toggle {
+    float: left;
+    width: 40%;
+    color: blue;
   }
 
   .details-holder * {
