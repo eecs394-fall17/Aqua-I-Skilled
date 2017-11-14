@@ -33,11 +33,11 @@ export class FirebaseProvider {
     return record;
   }
 
-  addImage(image64) {
+  addImage(image64, file) {
     var imgStrings = image64.split(',');
     var img = imgStrings[imgStrings.length - 1];
 
-    var ref = firebase.storage().ref('images/testImage.jpg');
+    var ref = firebase.storage().ref('images/' + file['name'].split('.')[0] + '.jpg');
     ref.putString(img, 'base64', { contentType: 'image/jpg' }).then(res => {
       console.log(res);
       console.log(res.downloadURL);

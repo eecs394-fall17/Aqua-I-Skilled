@@ -11,6 +11,10 @@
 
   <input type="file" (change)="previewFile()"><br>
 
+<!--<a (click)="insertUsers()">Insert Users</a><br/>-->
+<!--<a (click)="encodeImages()">Encode Images</a><br/>-->
+<!--<a (click)="insertLessons()">Insert Lessons</a>-->
+
   <p style="margin: 0px; text-align: center; font-size: 25px;">What would you like to learn today?</p>
 
   <ion-searchbar
@@ -21,9 +25,9 @@
   </ion-searchbar>
 
   <div class="search-results">
-  <ion-card *ngFor="let result of skills" class="search-result" (click)="confirmTrans(result)">
+  <ion-card *ngFor="let result of users" class="search-result" (click)="confirmTrans(result)">
     <ion-card-content>    
-      <img class="profile-img" src="{{'./assets/imgs/profiles/' + result['name'].split(' ').join('%20') + '.jpg'}}">
+      <img class="profile-img" src="{{ result['image'] }}">
       <div class="skill-leftinfo">
         <div class="skill-name">
           {{ result["keywords"].split(';')[0] | capWord }}
@@ -38,12 +42,11 @@
       <div class="skill-rightinfo">
         <div class="skill-dist">
           {{result["distance"]}} mi.
+          <br/>
+          <p style="color: green;"><strong>{{result["price"]}}</strong></p>
         </div>
       </div>
     </ion-card-content>
   </ion-card>
   </div>
-
-<!--<a (click)="insertData()">Insert Data</a>-->
-
 </ion-content>
