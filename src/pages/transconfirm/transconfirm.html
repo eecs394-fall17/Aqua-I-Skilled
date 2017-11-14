@@ -9,27 +9,28 @@
 
 <ion-content padding>
   <div class="profile-holder hacky-margin">
-    <img class="profile-img" src="{{'./assets/imgs/profiles/' + skill['name'].split(' ').join('%20') + '.jpg'}}">
+    <img class="profile-img" src="{{ user['image'] }}">
     <div class="profile-info">
       <div class="profile-name">
-        {{skill["name"]}}
+        {{user["name"]}}
       </div>
       <div class="profile-dist">
-        {{skill["distance"]}} mi.
+        {{user["distance"]}} mi.
       </div>
       <div class="profile-star">
-        <ion-icon *ngFor="let starCount of skill['starRange']" name="star"></ion-icon>
+        <ion-icon *ngFor="let starCount of user['starRange']" name="star"></ion-icon>
+        <div style="float: right; padding-right: 40%;">{{ user['rating'] }}</div>
       </div>
     </div>
 
     <div style="clear: both;"></div>
   </div>
   
-  <h1 style="font-size: 35px; text-align: center;">{{skill.keywords.split(";")[0] | capWord}}</h1>
+  <h1 style="font-size: 35px; text-align: center;">{{user.keywords.split(";")[0] | capWord}}</h1>
 
   <div class="schedule-holder">
     <div style="padding-bottom: 10px; border-bottom: 1px solid grey;">
-      Lesson overview for {{skill["name"]}}
+      Lesson overview for {{user["name"]}}
     </div>
   </div>
 
@@ -53,7 +54,7 @@
 <ion-footer>
   <ion-toolbar>
     <div class="book-holder">
-      <div class="book-info">20 Pts</div>
+      <div class="book-info">{{ user["price"] }} Pts</div>
       <button disabled=true ion-button class="btn" color="lightblue" large item-right>Confirm</button>
     </div>
   </ion-toolbar>

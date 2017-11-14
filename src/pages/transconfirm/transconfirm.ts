@@ -8,13 +8,13 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class TransconfirmPage {
 
-  skill:any;
+  user:any;
   lessonInfo:any;
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams) {
-    this.skill = this.navParams.get('skill');
+    this.user = this.navParams.get('user');
     this.lessonInfo = this.navParams.get('lessonInfo');
-    console.log(this.lessonInfo);
+    //console.log(this.lessonInfo);
   }
 }

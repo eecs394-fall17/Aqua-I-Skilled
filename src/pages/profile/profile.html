@@ -8,21 +8,18 @@
 </ion-header>
 
 <ion-content padding>
-  <!-- <h1 style="font-size: 35px; text-align: center;">{{skill.keywords.split(";")[0] | capWord}}</h1> -->
-
   <div class="profile-holder hacky-margin">
-    <!--<img class="profile-img" src="./assets/imgs/defaultProfile.jpg">-->
-    <img class="profile-img" src="{{'./assets/imgs/profiles/' + skill['name'].split(' ').join('%20') + '.jpg'}}">
+    <img class="profile-img" src="{{ user['image'] }}">
     <div class="profile-info">
       <div class="profile-name">
-        {{skill["name"]}}
+        {{user["name"]}}
       </div>
       <div class="profile-dist">
-        {{skill["distance"]}} mi.
+        {{user["distance"]}} mi.
       </div>
       <div class="profile-star">
-        <ion-icon *ngFor="let starCount of skill['starRange']" name="star"></ion-icon>
-        <div style="float: right; padding-right: 40%;">{{skill['rating']}}</div>
+        <ion-icon *ngFor="let starCount of user['starRange']" name="star"></ion-icon>
+        <div style="float: right; padding-right: 40%;">{{ user['rating'] }}</div>
       </div>
     </div>
 
@@ -34,25 +31,25 @@
 
     <div class="details-holder" [ngClass]="{'section-active': openHolder == 0, 'section': openHolder != 0}">
       <div (click)="toggleAccordion(0)" class="profileTitle">
-        {{skill["name"]}}'s Profile
+        {{user["name"]}}'s Profile
         <ion-icon *ngIf="openHolder == 0" class="acc-icon" name="arrow-down" color="dark" item-right></ion-icon>
         <ion-icon *ngIf="openHolder == 1" class="acc-icon" name="arrow-forward" color="dark" item-right></ion-icon>
       </div>
       <div *ngIf="openHolder == 0">
-        <div class="profileDesc">{{skill["description"]}}</div>
+        <div class="profileDesc">{{user["description"]}}</div>
         <div><strong>Reviews </strong>(1):</div>
         <div>
           <img class="reviewerPhoto" src="./assets/imgs/defaultProfile.jpg">
           <div class="reviewer">Anonymous</div>
           <div class="reviewDate">12 November, 7:31 PM</div>
         </div>
-        <div>{{skill["review"]}}</div>
+        <div>{{user["review"]}}</div>
       </div>
     </div>
 
     <div class="schedule-holder" [ngClass]="{'section-active': openHolder == 1, 'section': openHolder != 1}">
       <div (click)="toggleAccordion(1)" class="profileTitle">
-        {{skill["name"]}}'s Schedule
+        {{user["name"]}}'s Schedule
         <ion-icon *ngIf="openHolder == 1" class="acc-icon" name="arrow-down" color="dark"></ion-icon>
         <ion-icon *ngIf="openHolder == 0" class="acc-icon" name="arrow-forward" color="dark"></ion-icon>
       </div>
@@ -69,21 +66,13 @@
           </div>
         </div>
         <a>See all openings</a>
-        <!--
-        <ion-item *ngFor="let s of skills">
-        <ion-icon name ="arrow-down" color="primary" item-left (click)="toggleDetails(s)">
-        </ion-icon>
-        <div *ngIf="s.showDetails"> Test to see if it Toggles
-        </div>
-        </ion-item>
-        -->
       </div>
     </div>
   </div>
 
   <div class="book-holder">
-    <div class="book-info"><strong>20 Pts</strong></div>
-    <button ion-button large float-right class="btn" color="lightblue" (click)="confirmTrans(skill)">Request</button>
+    <div class="book-info"><strong>{{ user['price'] }} Pts</strong></div>
+    <button ion-button large float-right class="btn" color="lightblue" (click)="confirmTrans(user)">Request</button>
   </div>
 
 </ion-content>

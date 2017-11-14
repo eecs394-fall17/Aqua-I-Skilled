@@ -9,7 +9,7 @@ import { TransconfirmPage } from '../transconfirm/transconfirm';
 })
 export class ProfilePage {
 
-  skill:any;
+  user:any;
 
   staticLessons:any;
   lessonTime:any;
@@ -20,10 +20,10 @@ export class ProfilePage {
   constructor(public navCtrl: NavController,
               public navParams: NavParams) {
 
-    this.skill = this.navParams.get('skill');
+    this.user = this.navParams.get('user');
     this.openHolder = 0;
     this.lessonTime = 0;
-    var placeString = this.skill["name"];
+    var placeString = this.user["name"];
     var placeVar = placeString + "'s Place";
 
     this.staticLessons = [
@@ -32,21 +32,10 @@ export class ProfilePage {
     ]
   }
 
-  // trying to implement toggle
-  toggleDetails(skills) {
-      if (skills.showDetails) {
-      skills.showDetails = false;
-      skills.icon = 'ios-add-circle-outline';
-    } else {
-      skills.showDetails = true;
-      skills.icon = 'ios-remove-circle-outline';
-    }
-  }
-
   // temporary button that takes you to the transConfirm page
-  confirmTrans(skill){
+  confirmTrans(user){
     this.navCtrl.push(TransconfirmPage, {
-      skill: skill,
+      user: user,
       lessonInfo: this.staticLessons[this.lessonTime],
     });
   }

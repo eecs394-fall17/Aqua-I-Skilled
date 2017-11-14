@@ -79,7 +79,7 @@ export class SearchPage {
 
   confirmTrans(result){
     this.navCtrl.push(ProfilePage, {
-      skill: result
+      user: result
     });
   }
 
