@@ -1,8 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Create a profile
-    </ion-title>
+    <div style="width: 40%;"><img src="./assets/imgs/title.png"></div>
   </ion-navbar>
 </ion-header>
 
@@ -11,33 +9,37 @@
     <div class="personal-header">
       <div style="width: 30%; float: left;">
         <img src="./assets/imgs/defaultProfile.png">
+        <p>Add Profile Pic</p>
       </div>
+
       <div style="width: 70%; float: left;">
-        <input type="text" [(ngModel)]="user.name" name="name" class="text-input">
-        <input type="text" [(ngModel)]="user.zip" name="zip" class="text-input">
+        <input type="text" placeholder="Full Name" [(ngModel)]="user.name" name="name" class="text-input, inputBox">
+        <input type="text" [(ngModel)]="user.zip" name="zip" class="text-input, inputBox">
         <div>
-          <select [(ngModel)]="user.gender" name="gender" class="dropdown" style="width: 60%; float: left;">
+          <select [(ngModel)]="user.gender" name="gender" class="dropdown, dropdownStyle1" >
+            <option disabled selected hidden> Gender </option>
             <option value="female">Female</option>
             <option value="male">Male</option>
             <option value="other">Other</option>
           </select>
-          <input type="text" [(ngModel)]="user.age" name="age" class="text-input" style="width: 40%; float: left;">
+          <input type="text" [(ngModel)]="user.age" name="age" class="text-input, inputBox" style="width: 40%; float: left;">
         </div>
       </div>
-      
+
       <div style="clear: both;"></div>
     </div>
 
-    <select [(ngModel)]="user.keywords" name="keywords" class="dropdown">
+    <select [(ngModel)]="user.keywords" name="keywords" class="dropdown dropdownStyle2">
+      <option disabled selected hidden> Skills </option>
       <option value="skill1">Skill1</option>
       <option value="skill2">Skill2</option>
     </select>
 
-    <textarea [(ngModel)]="user.description" name="description" class="text-input" rows=5></textarea>
+    <textarea [(ngModel)]="user.description" name="description" class="text-input, inputBox" rows=5></textarea>
 
-    <input type="text" [(ngModel)]="user.email" name="email" class="text-input">
-    <input type="text" [(ngModel)]="user.password" name="password" class="text-input">
+    <input type="text" [(ngModel)]="user.email" name="email" class="text-input, inputBox">
+    <input type="text" [(ngModel)]="user.password" name="password" class="text-input, inputBox">
 
-    <button ion-button large float-right class="btn" color="lightblue" type="submit">Sign Up</button>
+    <button ion-button large float-right class="btn" color="babyblue" type="submit">Sign Up</button>
   </form>
 </ion-content>
