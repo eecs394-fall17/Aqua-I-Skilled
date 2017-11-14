@@ -9,14 +9,25 @@ import { EditprofilePage } from '../editprofile/editprofile';
 })
 export class CreateprofilePage {
 
+  user:any;
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams) {
-
+    this.user = {
+      name: "Name",
+      zip: "Zip",
+      gender: "Gender",
+      age: "Age",
+      keywords: "Skills",
+      description: "Description\nExample: I am a professional chef with 25 years of experience in cooking Chinese and Thai food. I currently work at Novotei.",
+      email: "Email",
+      password: "Password",
+    };
   }
 
-  editProfile(result) {
+  logForm() {
     this.navCtrl.push(EditprofilePage, {
-          skill: result
+      user: this.user
     });
   }
 

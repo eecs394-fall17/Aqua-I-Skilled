@@ -7,6 +7,37 @@
 </ion-header>
 
 <ion-content padding>
-  <button ion-button large float-right class="btn" color="lightblue" (click)="editProfile()">Edit Profile</button>
+  <form (ngSubmit)="logForm()">
+    <div class="personal-header">
+      <div style="width: 30%; float: left;">
+        <img src="./assets/imgs/defaultProfile.png">
+      </div>
+      <div style="width: 70%; float: left;">
+        <input type="text" [(ngModel)]="user.name" name="name" class="text-input">
+        <input type="text" [(ngModel)]="user.zip" name="zip" class="text-input">
+        <div>
+          <select [(ngModel)]="user.gender" name="gender" class="dropdown" style="width: 60%; float: left;">
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+            <option value="other">Other</option>
+          </select>
+          <input type="text" [(ngModel)]="user.age" name="age" class="text-input" style="width: 40%; float: left;">
+        </div>
+      </div>
+      
+      <div style="clear: both;"></div>
+    </div>
 
+    <select [(ngModel)]="user.keywords" name="keywords" class="dropdown">
+      <option value="skill1">Skill1</option>
+      <option value="skill2">Skill2</option>
+    </select>
+
+    <textarea [(ngModel)]="user.description" name="description" class="text-input" rows=5></textarea>
+
+    <input type="text" [(ngModel)]="user.email" name="email" class="text-input">
+    <input type="text" [(ngModel)]="user.password" name="password" class="text-input">
+
+    <button ion-button large float-right class="btn" color="lightblue" type="submit">Sign Up</button>
+  </form>
 </ion-content>
