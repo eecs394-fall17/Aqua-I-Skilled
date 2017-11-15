@@ -11,6 +11,8 @@ import { SearchPage } from '../pages/search/search';
 import { AddSkillPage } from '../pages/addskill/addskill';
 import { TransconfirmPage } from '../pages/transconfirm/transconfirm';
 import { ProfilePage } from '../pages/profile/profile';
+import { CreateprofilePage } from '../pages/createprofile/createprofile';
+import { EditprofilePage } from '../pages/editprofile/editprofile';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -26,14 +28,9 @@ import { SearchProvider } from '../providers/search';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
-export const firebaseConfig = {
-  apiKey: "AIzaSyDaZhd6nxDurrvCNuAJpIrn52jCSckY17c",
-  authDomain: "i-skilled.firebaseapp.com",
-  databaseURL: "https://i-skilled.firebaseio.com",
-  projectId: "i-skilled",
-  storageBucket: "i-skilled.appspot.com",
-  messagingSenderId: "224698285796"
-};
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+
+import { firebaseConfig } from './app.firebaseEnv';
 
 @NgModule({
   declarations: [
@@ -45,6 +42,8 @@ export const firebaseConfig = {
     SearchPage,
     AddSkillPage,
     TransconfirmPage,
+    CreateprofilePage,
+    EditprofilePage,
     ProfilePage,
     CapWord,
   ],
@@ -54,6 +53,7 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig, 'iskilled'),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    AngularFirestoreModule.enablePersistence(),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -63,6 +63,8 @@ export const firebaseConfig = {
     HomePage,
     TabsPage,
     TransconfirmPage,
+    CreateprofilePage,
+    EditprofilePage,
     ProfilePage,
     SearchPage,
     AddSkillPage,

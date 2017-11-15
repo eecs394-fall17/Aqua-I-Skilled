@@ -4,24 +4,37 @@
       <div style="margin-left: 10%; width: 30%;"><img src="./assets/imgs/logo.png"></div>
       <div style="width: 50%;"><img src="./assets/imgs/title.png"></div>
     </div>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="createProfile()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding style="background-position: center center; background-size: contain; background-repeat: no-repeat; background-image: url('./assets/imgs/searchBackground.png');" id="background-content">
+    
+<!--<input type="file" (change)="previewFile()"><br>-->
+<!--<a (click)="insertUsers()">Insert Users</a><br/>-->
+<!--<a (click)="encodeImages()">Encode Images</a><br/>-->
+<!--<a (click)="insertLessons()">Insert Lessons</a>-->
+<!--<a (click)="insertReviews()">Insert Reviews</a>-->
 
-  <p style="margin: 0px; text-align: center; font-size: 25px;">What would you like to learn today?</p>
+<!--  <p style="margin: 0px; text-align: center; font-size: 25px;">What would you like to learn today?</p>-->
 
   <ion-searchbar
     [(ngModel)]="skillSearch"
     [showCancelButton]="shouldShowCancel"
+    [debounce]="1000"
     (ionInput)="onSearchInput($event)"
-    (ionCancel)="onSearchCancel($event)">
+    (ionCancel)="onSearchCancel($event)"
+    [ngClass]="{'searchbar-firsttime': searchedYet == 0, 'searchbar': searchedYet == 1}">
   </ion-searchbar>
 
   <div class="search-results">
-  <ion-card *ngFor="let result of skills" class="search-result" (click)="confirmTrans(result)">
+  <ion-card *ngFor="let result of users" class="search-result" (click)="confirmTrans(result)">
     <ion-card-content>    
-      <img class="profile-img" src="{{'./assets/imgs/profiles/' + result['name'].split(' ').join('%20') + '.jpg'}}">
+      <img class="profile-img" src="{{ result['image'] }}">
       <div class="skill-leftinfo">
         <div class="skill-name">
           {{ result["keywords"].split(';')[0] | capWord }}
@@ -36,6 +49,8 @@
       <div class="skill-rightinfo">
         <div class="skill-dist">
           {{result["distance"]}} mi.
+          <br/>
+          <p style="color: green;"><strong>{{result["price"]}} Pts</strong></p>
         </div>
         <!-- adding temporary cost div without firebase on search page  -->
         <div class="skill-cost" style="color: green;">
@@ -45,7 +60,5 @@
     </ion-card-content>
   </ion-card>
   </div>
-
-<!--<a (click)="insertData()">Insert Data</a>-->
 
 </ion-content>

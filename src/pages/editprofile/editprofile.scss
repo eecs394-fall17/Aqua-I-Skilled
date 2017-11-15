@@ -1,0 +1,94 @@
+page-editprofile {
+
+  @import "../../theme/header";
+  @import "../../theme/main";
+
+  .profile-img {
+    float: left;
+    width: 30%;
+    margin-left: 10%;
+  }
+
+  .profile-info {
+    float: left;
+    width: 40%;
+    margin-left: 10%;
+  }
+
+  .profile-name,
+  .profile-dist,
+  .profile-star {
+    color: white;
+    padding-bottom: 5px;
+  }
+
+  .profile-name {
+    font-size: 26px;
+  }
+
+  .profile-star ion-icon {
+    font-size: 18px;
+  }
+
+  .profile-dist {
+    font-size: 16px;
+  }
+
+  .profile-holder {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #66B8E7;
+    border: 3px solid #B7DDF4;
+  }
+
+  .schedule-holder * {
+    font-size: 18px;
+    margin: 10px 0px;
+  }
+
+  .book-holder {
+    display: flex;
+    justify-content: space-evenly;
+    color: green;
+  }
+
+  .book-info {
+    display: table-cell;
+    text-align: center;
+    font-size: 30px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .book-button {
+    font-size: 30px;
+  }
+
+  .lesson-icon {
+    color: #929292;
+    width: 40%;
+    height: 60px;
+    font-size: 50px;
+    text-align: center;
+  }
+
+  .lesson-info {
+    font-size: 20px;
+    word-break: break-all;
+  }
+
+  .lesson * {
+    float: left;
+  }
+
+  .lesson {
+    clear: both;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid grey;
+    padding: 10px 0px;
+  }
+
+  // split up so can get multiple lines of text like the wireframes they sent earlier
+
+}

@@ -41,15 +41,21 @@ page-profile {
     border: 3px solid #B7DDF4;
   }
 
-  .accordion > div {
-    border-bottom: 2px solid #F3F3F3;
-  }
+  // .accordion > div {
+  //   border-bottom: 2px solid #F3F3F3;
+  // }
 
   .accordion > .section-active {
-    background-color: white;
+    background-color: #F3F3F3;
   }
 
   .accordion > .section {
+  }
+
+  .toggle {
+    float: left;
+    width: 40%;
+    color: blue;
   }
 
   .details-holder * {
@@ -62,9 +68,7 @@ page-profile {
   }
 
   .lesson-holder {
-    font-size: 18px;
-    background-color: #F3F3F3;
-    padding-bottom: 15px;
+    padding-top: 30px;
   }
 
   .lessonRadio,
@@ -134,19 +138,22 @@ page-profile {
   }
   // split up so can get multiple lines of text like the wireframes they sent earlier
   .profileTitle {
-    font-size: 27px;
+    font-size: 22px;
     padding: 10px 0px;
+    color: #66B8E7;
+    text-align: center;
   }
 
   .profileDesc {
     font-size: 22px;
+    padding-top: 7%;
   }
 
-  .acc-icon {
-    font-size: 25px;
-    float: right;
-    padding-right: 5%;
-  }
+  // .acc-icon {
+  //   font-size: 25px;
+  //   float: right;
+  //   padding-right: 5%;
+  // }
 
   .reviewer {
     padding: 0;
