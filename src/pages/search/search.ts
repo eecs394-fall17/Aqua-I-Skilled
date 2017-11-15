@@ -21,6 +21,8 @@ export class SearchPage {
   skills:any;
   skillSearch:any;
 
+  searchedYet:any;
+
   users:any;
 
   pullFilterSkills() {
@@ -40,8 +42,9 @@ export class SearchPage {
               private searchProv: SearchProvider) {
     this.skillSearch = "";
     this.pullFilterSkills();
+    this.searchedYet = 0;
   }
-  
+
   previewFile() {
     var file    = (<HTMLInputElement>document.querySelector('input[type=file]')).files[0];
     //var file = document.querySelector('input[type=file]').files[0];
@@ -70,12 +73,15 @@ export class SearchPage {
       return;
     }
 
+    this.searchedYet = 1;
+    document.getElementById('background-content').setAttribute('style',"");
     this.users = this.searchProv.filter(this.users, this.skillSearch);
   }
 
   onSearchCancel(event) {
     //console.log("Search cancelled");
     this.users = [];
+    this.skillSearch = "";
   }
 
   confirmTrans(result){
@@ -148,6 +154,33 @@ export class SearchPage {
     });
   }
 
+  insertReviews() {
+    var data = [];
+
+    this.parseReviews(data, 0, this.dbProv, this.parseReviews);
+  }
+
+  parseReviews(data, i, dbProv, parse) {
+    if (i == data.length)
+      return;
+    var review = data[i];
+
+    var query = dbProv.db.list('/users', ref => ref.orderByChild('name').equalTo(review['name'])).snapshotChanges().subscribe(function (users) {
+      if (users.length == 1) {
+        var user = users[0].payload;
+
+        dbProv.db.list('/reviews').push({
+          name: review['name'],
+          review: review['review'],
+          rating: review['rating'],
+          reviewer: "Anonymous"
+        });
+      }
+
+      parse(data, i+1, dbProv, parse);
+    });
+  }
+
   insertLessons() {
     var data = [];
   
@@ -196,4 +229,5 @@ export class SearchPage {
       parse(data, i+1, dbProv, parse);
     });
   }
+
 }

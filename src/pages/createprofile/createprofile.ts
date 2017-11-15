@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { EditprofilePage } from '../editprofile/editprofile';
 
+import { FirebaseProvider } from '../../providers/firebase';
 
 @Component({
   selector: 'page-createprofile',
@@ -224,6 +225,7 @@ export class CreateprofilePage {
   ];
 
   constructor(public navCtrl: NavController,
+              private dbProv: FirebaseProvider,
               public navParams: NavParams) {
     this.user = {
       name: "Name",
@@ -234,12 +236,18 @@ export class CreateprofilePage {
       description: "Description\nExample: I am a professional chef with 25 years of experience in cooking Chinese and Thai food. I currently work at Novotei.",
       email: "Email",
       password: "Password",
+      image: "",
+      price: "25",
+      rating: "3",
+      distance: "2",
     };
 
     console.log(this.masterskills);
   }
 
   logForm() {
+    this.dbProv.db.list('/newusers').push(this.user);
+
     this.navCtrl.push(EditprofilePage, {
       user: this.user
     });

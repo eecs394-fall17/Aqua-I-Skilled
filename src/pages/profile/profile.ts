@@ -14,6 +14,7 @@ export class ProfilePage {
   user:any;
 
   lessons:any;
+  reviews:any;
   lessonTime:any;
 
   // Used for accordion dropdown
@@ -22,7 +23,6 @@ export class ProfilePage {
   constructor(public navCtrl: NavController,
               private dbProv: FirebaseProvider,
               public navParams: NavParams) {
-
     this.user = this.navParams.get('user');
     this.openHolder = 0;
     this.lessonTime = 0;
@@ -40,6 +40,10 @@ export class ProfilePage {
         this.lessons[i]['dateStr'] = this.dateStrFor(date);
         this.lessons[i]['place'] = placeVar;
       }
+    });
+
+    dbProv.db.list('/reviews', ref => ref.orderByChild('name').equalTo(this.user['name'])).valueChanges().subscribe(reviews => {
+      this.reviews = reviews;
     });
   }
 

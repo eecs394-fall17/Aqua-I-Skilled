@@ -12,20 +12,23 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-
+<ion-content padding style="background-position: center center; background-size: contain; background-repeat: no-repeat; background-image: url('./assets/imgs/searchBackground.png');" id="background-content">
+    
 <!--<input type="file" (change)="previewFile()"><br>-->
 <!--<a (click)="insertUsers()">Insert Users</a><br/>-->
 <!--<a (click)="encodeImages()">Encode Images</a><br/>-->
-<a (click)="insertLessons()">Insert Lessons</a>
+<!--<a (click)="insertLessons()">Insert Lessons</a>-->
+<!--<a (click)="insertReviews()">Insert Reviews</a>-->
 
-  <p style="margin: 0px; text-align: center; font-size: 25px;">What would you like to learn today?</p>
+<!--  <p style="margin: 0px; text-align: center; font-size: 25px;">What would you like to learn today?</p>-->
 
   <ion-searchbar
     [(ngModel)]="skillSearch"
     [showCancelButton]="shouldShowCancel"
+    [debounce]="1000"
     (ionInput)="onSearchInput($event)"
-    (ionCancel)="onSearchCancel($event)">
+    (ionCancel)="onSearchCancel($event)"
+    [ngClass]="{'searchbar-firsttime': searchedYet == 0, 'searchbar': searchedYet == 1}">
   </ion-searchbar>
 
   <div class="search-results">
@@ -53,4 +56,5 @@
     </ion-card-content>
   </ion-card>
   </div>
+
 </ion-content>

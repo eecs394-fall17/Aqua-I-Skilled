@@ -50,12 +50,14 @@
     <div *ngIf="openHolder == 0" class="details-holder">
       <div class="profileDesc">{{user["description"]}}</div>
       <div><strong>Reviews </strong><strong style="color:#66B8E7">(1)</strong>:</div>
-      <div>
-        <img class="reviewerPhoto" src="./assets/imgs/defaultProfile.png">
-        <div class="reviewer">Anonymous</div>
-        <div class="reviewDate">12 November, 7:31 PM</div>
+      <div *ngFor="let review of reviews">
+        <div>
+          <img class="reviewerPhoto" src="./assets/imgs/defaultProfile.png">
+          <div class="reviewer">{{ review.reviewer }}</div>
+          <div class="reviewDate">12 November, 7:31 PM</div>
+        </div>
+        <div>{{ review["review"] }}</div>
       </div>
-      <div>{{user["review"]}}</div>
     </div>
 
     <div *ngIf="openHolder == 1" class="schedule-holder">

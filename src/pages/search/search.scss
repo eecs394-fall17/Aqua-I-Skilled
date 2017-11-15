@@ -2,6 +2,10 @@ page-search {
   
   @import "../../theme/header";
 
+  .searchbar-firsttime {
+    margin-top: 42%;
+  }
+
   .search-results ion-card:nth-child(odd) {
     background-color: #DAEEF9;
   }

@@ -9,8 +9,10 @@ import { CreateprofilePage } from '../createprofile/createprofile';
 })
 export class EditprofilePage {
 
+  user:any;
+  
   constructor(public navCtrl: NavController,
               public navParams: NavParams) {
-
+    this.user = this.navParams.get('user');
   }
 }
