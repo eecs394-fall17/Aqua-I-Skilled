@@ -30,7 +30,16 @@ page-createprofile {
     background-color: #F3F3F3;
   }
 
-  input, select, textarea{
-    color: red;
+  input {
+    color: #939393;
+    font-weight: bold;
+  }
+
+  textarea {
+    color: #939393;
+  }
+
+  select {
+    color: #545454;
   }
 }

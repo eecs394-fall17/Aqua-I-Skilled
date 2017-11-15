@@ -26,30 +26,30 @@
     <div style="clear: both;"></div>
   </div>
 
-  <div class="accordion">
+  <div style="align: center;"class="accordion">
 
 
     <div class="toggle" [ngClass]="{'section-active': openHolder == 0, 'section': openHolder != 0}">
       <div (click)="toggleAccordion(0)" class="profileTitle">
-        {{user["name"]}}'s Profile
-        <ion-icon *ngIf="openHolder == 0" class="acc-icon" name="arrow-down" color="dark" item-right></ion-icon>
-        <ion-icon *ngIf="openHolder == 1" class="acc-icon" name="arrow-forward" color="dark" item-right></ion-icon>
+        <!-- {{user["name"]}}'s -->Profile
+        <!-- <ion-icon *ngIf="openHolder == 0" class="acc-icon" name="arrow-down" color="dark" item-right></ion-icon>
+        <ion-icon *ngIf="openHolder == 1" class="acc-icon" name="arrow-forward" color="dark" item-right></ion-icon> -->
       </div>
     </div>
 
     <div class="toggle" [ngClass]="{'section-active': openHolder == 1, 'section': openHolder != 1}">
       <div (click)="toggleAccordion(1)" class="profileTitle">
-        {{user["name"]}}'s Schedule
-        <ion-icon *ngIf="openHolder == 1" class="acc-icon" name="arrow-down" color="dark"></ion-icon>
-        <ion-icon *ngIf="openHolder == 0" class="acc-icon" name="arrow-forward" color="dark"></ion-icon>
+        <!-- {{user["name"]}}'s --> Schedule
+        <!-- <ion-icon *ngIf="openHolder == 1" class="acc-icon" name="arrow-down" color="dark"></ion-icon>
+        <ion-icon *ngIf="openHolder == 0" class="acc-icon" name="arrow-forward" color="dark"></ion-icon> -->
       </div>
     </div>
-    
+
     <div style="clear: both;"></div>
 
     <div *ngIf="openHolder == 0" class="details-holder">
       <div class="profileDesc">{{user["description"]}}</div>
-      <div><strong>Reviews </strong>(1):</div>
+      <div><strong>Reviews </strong><strong style="color:#66B8E7">(1)</strong>:</div>
       <div>
         <img class="reviewerPhoto" src="./assets/imgs/defaultProfile.png">
         <div class="reviewer">Anonymous</div>
@@ -60,7 +60,7 @@
 
     <div *ngIf="openHolder == 1" class="schedule-holder">
       <div>
-        <div *ngFor="let lesson of staticLessons; let i = index" class="lesson-holder hacky-margin">
+        <div *ngFor="let lesson of staticLessons; let i = index" class="lesson-holder ">
           <input *ngIf="lessonTime == i" class="lessonRadio" (click)="toggleLessonRadio(i)" type="radio" name="lesson" value="{{i}}" checked>
           <input *ngIf="lessonTime != i" class="lessonRadio" (click)="toggleLessonRadio(i)" type="radio" name="lesson" value="{{i}}">
 
@@ -69,13 +69,13 @@
           <div style="clear: both;"></div>
         </div>
       </div>
-      <a>See all openings</a>
+      <div style="padding-top:7%; text-align:left; padding-left:5%; padding-bottom:7%;"><u><a>See all openings</a></u></div>
     </div>
   </div>
 
   <div class="book-holder">
     <div class="book-info"><strong>{{ user['price'] }} Pts</strong></div>
-    <button ion-button large float-right class="btn" color="lightblue" (click)="confirmTrans(user)">Request</button>
+    <button ion-button large float-right color="babyblue" (click)="confirmTrans(user)">Request</button>
   </div>
 
 </ion-content>
