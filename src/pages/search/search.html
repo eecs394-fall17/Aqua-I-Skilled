@@ -6,14 +6,14 @@
     </div>
     <ion-buttons right>
       <button ion-button icon-only (click)="createProfile()">
-        <ion-icon name="add"></ion-icon>
+        <ion-icon name="person"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding style="background-position: center center; background-size: contain; background-repeat: no-repeat; background-image: url('./assets/imgs/searchBackground.png');" id="background-content">
-    
+
 <!--<input type="file" (change)="previewFile()"><br>-->
 <!--<a (click)="insertUsers()">Insert Users</a><br/>-->
 <!--<a (click)="encodeImages()">Encode Images</a><br/>-->
@@ -33,7 +33,7 @@
 
   <div class="search-results">
   <ion-card *ngFor="let result of users" class="search-result" (click)="confirmTrans(result)">
-    <ion-card-content>    
+    <ion-card-content>
       <img class="profile-img" src="{{ result['image'] }}">
       <div class="skill-leftinfo">
         <div class="skill-name">

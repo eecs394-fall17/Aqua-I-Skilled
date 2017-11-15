@@ -74,14 +74,14 @@ page-profile {
   .lessonRadio,
   .lessonTime {
     float: left;
-    font-size: 22px;
+    font-size: 18px;
     padding: 0px 10px;
     margin: 10px 0px 5px 0px;
   }
 
   .lessonPlace {
     float: left;
-    font-size: 15px;
+    font-size: 18px;
     padding: 0px 10px;
     width: 80%;
 
@@ -145,7 +145,7 @@ page-profile {
   }
 
   .profileDesc {
-    font-size: 22px;
+    font-size: 18px;
     padding-top: 7%;
   }
 
@@ -163,7 +163,8 @@ page-profile {
   .reviewDate {
     color: grey;
     padding-top: 0;
-    padding-bottom: 10px;;
+    padding-bottom: 10px;
+    font-size: 13px;
   }
 
   .reviewerPhoto {
@@ -171,6 +172,13 @@ page-profile {
     width: 15%;
     height: 65px;
     padding-top: 0;
+  }
+
+  .reviewNote {
+    font-size: 13px;
+    display: inline-block;
+    padding-left: 5%;
+    padding-right: 5%;
   }
 
 
