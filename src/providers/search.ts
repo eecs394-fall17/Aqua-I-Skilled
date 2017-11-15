@@ -13,7 +13,7 @@ export class SearchProvider {
 
     for (var i = 0; i < skills.length; i++) {
       var keywords = skills[i]['keywords'].split(';');
-      console.log(keywords);
+      //console.log(keywords);
       var keywordFound = false;
 
       for (var j = 0; j < keywords.length; j++) {

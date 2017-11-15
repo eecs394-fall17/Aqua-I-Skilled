@@ -60,11 +60,11 @@
 
     <div *ngIf="openHolder == 1" class="schedule-holder">
       <div>
-        <div *ngFor="let lesson of staticLessons; let i = index" class="lesson-holder ">
+        <div *ngFor="let lesson of lessons; let i = index" class="lesson-holder ">
           <input *ngIf="lessonTime == i" class="lessonRadio" (click)="toggleLessonRadio(i)" type="radio" name="lesson" value="{{i}}" checked>
           <input *ngIf="lessonTime != i" class="lessonRadio" (click)="toggleLessonRadio(i)" type="radio" name="lesson" value="{{i}}">
 
-          <div class="lessonTime">{{lesson.date}}&emsp;&emsp;{{lesson.time}}</div>
+          <div class="lessonTime">{{lesson.dateStr}}&emsp;&emsp;{{lesson.timeStr}}</div>
           <div class="lessonPlace">{{lesson.place}} <ion-icon name="pin"></ion-icon></div>
           <div style="clear: both;"></div>
         </div>

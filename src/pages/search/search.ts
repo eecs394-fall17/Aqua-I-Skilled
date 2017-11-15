@@ -41,7 +41,7 @@ export class SearchPage {
     this.skillSearch = "";
     this.pullFilterSkills();
   }
-
+  
   previewFile() {
     var file    = (<HTMLInputElement>document.querySelector('input[type=file]')).files[0];
     //var file = document.querySelector('input[type=file]').files[0];
@@ -150,19 +150,50 @@ export class SearchPage {
 
   insertLessons() {
     var data = [];
-    /*for (var i = 0; i < data.length; i++) {
-      var lesson = data[i];
-      var user = this.dbProv.afs.collection('users', ref => ref.where("name","==",lesson.name)).valueChanges();
+  
+    this.parseLessons(data, 0, this.dbProv, this.parseLessons);
+  }
 
-      var dbProv = this.dbProv;
-      console.log(user);
-      user.forEach(function (u) {
-        var coll = dbProv.afs.collection('lessons');
+  parseLessons(data, i, dbProv, parse) {
+    if (i == data.length)
+      return;
+    var lesson = data[i];
 
-        var lessonClass = new Lesson(u[0]['id'], "", "30","",lesson['distance'],lesson['price']);
-        lessonClass.id = dbProv.afs.createId();
-        coll.add(lessonClass.toObj());
-      });
-    }*/
+    var query = dbProv.db.list('/users', ref => ref.orderByChild('name').equalTo(lesson['name'])).snapshotChanges().subscribe(function (users) {
+      if (users.length == 1) {
+        var user = users[0].payload;
+        var lessonStrs = lesson['time'].split(',').join('').split('; ');
+        var times = [];
+
+        for (var strI = 0; strI < lessonStrs.length; strI++) {
+          var strParts = lessonStrs[strI].split(' ');
+          console.log(strParts);
+          var hS = strParts[0];
+          var hour = parseInt(hS.substring(0,hS.length - 2));
+          hour = (hour == 12 ? 0 : hour);
+          hour += (hS.substring(hS.length - 2) == "pm" ? 12 : 0);
+
+          var dS = strParts[1];
+          var day = parseInt(dS.substring(0,dS.length - 2));
+
+          var mS = strParts[2];
+          var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+          var month = months.findIndex(el => el == mS);
+
+          var year = parseInt(strParts[3]);
+
+          times.push(new Date(year, month, day, hour, 0, 0, 0));
+        }
+        
+        times.forEach(time => {
+          dbProv.db.list('/lessons').push({
+            name: user.val()['name'],
+            time: time.toISOString()
+          })
+        });
+      }
+      console.log("Moving on");
+      parse(data, i+1, dbProv, parse);
+    });
   }
 }
