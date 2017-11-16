@@ -1,9 +1,9 @@
 page-search {
-  
+
   @import "../../theme/header";
 
   .searchbar-firsttime {
-    margin-top: 42%;
+    margin-top: 50%;
   }
 
   .search-results ion-card:nth-child(odd) {
@@ -22,7 +22,7 @@ page-search {
   }
 
   .skill-img {
-    float: left; 
+    float: left;
     width: 20%;
     padding-right: 10px;
   }
@@ -58,5 +58,10 @@ page-search {
   .skill-rightinfo {
     float: left;
     width: 20%;
+  }
+
+  .search {
+    position: fixed;
+    width: 95%;
   }
 }

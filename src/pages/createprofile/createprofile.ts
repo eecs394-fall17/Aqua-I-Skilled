@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { EditprofilePage } from '../editprofile/editprofile';
 
 import { FirebaseProvider } from '../../providers/firebase';
+import { SearchPage } from '../search/search';
 
 @Component({
   selector: 'page-createprofile',
@@ -222,6 +223,7 @@ export class CreateprofilePage {
 "Snorkelling",
 "Olympic weightlifting",
 "Rowing",
+"Other"
   ];
 
   constructor(public navCtrl: NavController,
@@ -251,6 +253,11 @@ export class CreateprofilePage {
     this.navCtrl.push(EditprofilePage, {
       user: this.user
     });
+  }
+
+  goToSearch() {
+  this.navCtrl.push(SearchPage, {
+  });
   }
 
 
