@@ -15,7 +15,8 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding style="background-position: center center; background-size: contain; background-repeat: no-repeat; background-image: url('./assets/imgs/searchBackground.png');" id="background-content">
+<ion-content>
+<div padding style="background-position: center center; background-size: contain; background-repeat: no-repeat; background-image: url('./assets/imgs/searchBackground.png'); height: 100%;" id="background-content">
 
 <!--<input type="file" (change)="previewFile()"><br>-->
 <!--<a (click)="insertUsers()">Insert Users</a><br/>-->
@@ -26,6 +27,7 @@
 <!--  <p style="margin: 0px; text-align: center; font-size: 25px;">What would you like to learn today?</p>-->
 
   <ion-searchbar
+    id="searchbar"
     class="search"
     [(ngModel)]="skillSearch"
     [showCancelButton]="shouldShowCancel"
@@ -62,4 +64,5 @@
   </ion-card>
   </div>
 
+</div>
 </ion-content>

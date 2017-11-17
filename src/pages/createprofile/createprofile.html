@@ -22,7 +22,7 @@
 
       <div style="width: 70%; float: left;">
         <input type="text" placeholder="Full Name" [(ngModel)]="user.name" name="name" class="text-input, inputBox">
-        <input type="text" [(ngModel)]="user.zip" name="zip" class="text-input, inputBox">
+        <input type="text" placeholder="Zip" [(ngModel)]="user.zip" name="zip" class="text-input, inputBox">
         <div>
           <select [(ngModel)]="user.gender" name="gender" class="dropdown, dropdownStyle1" >
             <option disabled selected hidden> Gender </option>
@@ -30,22 +30,29 @@
             <option value="male">Male</option>
             <option value="other">Other</option>
           </select>
-          <input type="text" [(ngModel)]="user.age" name="age" class="text-input, inputBox" style="width: 40%; float: left;">
+          <input type="text" placeholder="Age" [(ngModel)]="user.age" name="age" class="text-input, inputBox" style="width: 40%; float: left;">
         </div>
       </div>
 
       <div style="clear: both;"></div>
     </div>
 
-    <select [(ngModel)]="user.keywords" name="keywords" class="dropdown dropdownStyle2">
+    <select id="skillSelect" (change)="addSkill()" class="dropdown dropdownStyle2">
       <option disabled selected hidden> Skills </option>
       <option *ngFor="let skill of masterskills" value="{{skill}}">{{skill}}</option>
     </select>
 
-    <textarea [(ngModel)]="user.description" name="description" class="text-input, inputBox" rows=5></textarea>
+    <div>
+      Skills
+      <div *ngFor="let keyword of keywords">
+        <div (click)="removeSkill(keyword)" class="skillItem">{{ keyword }}</div>
+      </div>
+    </div>
 
-    <input type="text" [(ngModel)]="user.email" name="email" class="text-input, inputBox">
-    <input type="text" [(ngModel)]="user.password" name="password" class="text-input, inputBox">
+    <textarea id="descText" [(ngModel)]="user.description" name="description" class="text-input, inputBox" rows=5></textarea>
+
+    <input type="text" placeholder="Email" [(ngModel)]="user.email" name="email" class="text-input, inputBox">
+    <input type="text" placeholder="Password" [(ngModel)]="user.password" name="password" class="text-input, inputBox">
 
     <button ion-button large float-right class="btn" color="babyblue" type="submit">Sign Up</button>
   </form>

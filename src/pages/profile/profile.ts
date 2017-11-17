@@ -82,8 +82,8 @@ export class ProfilePage {
   }
 
   goToSearch() {
-  this.navCtrl.push(SearchPage, {
-  });
+    this.navCtrl.setRoot(SearchPage, {
+    });
   }
 
 
