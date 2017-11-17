@@ -13,6 +13,7 @@ import { TransconfirmPage } from '../pages/transconfirm/transconfirm';
 import { ProfilePage } from '../pages/profile/profile';
 import { CreateprofilePage } from '../pages/createprofile/createprofile';
 import { EditprofilePage } from '../pages/editprofile/editprofile';
+import { ProfilesPage } from '../pages/profiles/profiles';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -45,6 +46,7 @@ import { firebaseConfig } from './app.firebaseEnv';
     CreateprofilePage,
     EditprofilePage,
     ProfilePage,
+    ProfilesPage,
     CapWord,
   ],
   imports: [
@@ -66,6 +68,7 @@ import { firebaseConfig } from './app.firebaseEnv';
     CreateprofilePage,
     EditprofilePage,
     ProfilePage,
+    ProfilesPage,
     SearchPage,
     AddSkillPage,
   ],

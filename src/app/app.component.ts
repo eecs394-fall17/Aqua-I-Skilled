@@ -7,6 +7,7 @@ import { SearchPage } from '../pages/search/search';
 import { AddSkillPage } from '../pages/addskill/addskill';
 import { TransconfirmPage } from '../pages/transconfirm/transconfirm';
 import { ProfilePage } from '../pages/profile/profile';
+import { ProfilesPage } from '../pages/profiles/profiles';
 import { CreateprofilePage } from '../pages/createprofile/createprofile';
 import { EditprofilePage } from '../pages/editprofile/editprofile';
 
@@ -41,7 +42,7 @@ export class MyApp {
 
     this.pages = [
       { title: 'Search', component: SearchPage },
-      { title: 'Add Skill', component: AddSkillPage }
+      { title: 'View Profiles', component: ProfilesPage },
     ];
   }
 

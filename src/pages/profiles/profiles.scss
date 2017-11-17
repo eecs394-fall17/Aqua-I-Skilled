@@ -1,0 +1,54 @@
+page-profiles {
+
+  @import "../../theme/header";
+
+  .profile-img {
+    float: left;
+    max-width: 80px;
+    max-height: 80px;
+    width: 20%;
+  }
+
+  ion-card img {
+    width: auto;
+  }
+
+  .skill-img {
+    float: left;
+    width: 20%;
+    padding-right: 10px;
+  }
+
+  .skill-leftinfo {
+    padding-left: 5%;
+    float: left;
+    width: 60%;
+  }
+
+  .skill-img,
+  .skill-leftinfo {
+    margin-bottom: 10px;
+  }
+
+  .skill-name {
+    font-size: 22px;
+  }
+
+  .skill-desc {
+    font-size: 15px;
+  }
+
+  .skill-star ion-icon {
+    font-size: 18px;
+  }
+
+  .skill-dist {
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .skill-rightinfo {
+    float: left;
+    width: 20%;
+  }
+}

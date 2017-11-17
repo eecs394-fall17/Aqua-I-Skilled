@@ -13,6 +13,9 @@
       <div class="profile-name">
         {{user["name"]}}
       </div>
+      <div class="profile-name">
+        {{ user.email }}
+      </div>
       <div class="profile-dist">
         {{user["distance"]}} mi.
       </div>
@@ -25,7 +28,22 @@
     <div style="clear: both;"></div>
   </div>
 
-  <div>{{ user.email }}</div>
-  <div>{{ user.description }}</div>
-  <div>{{ user.keywords }}</div>
+  <div class="">
+    {{ user.description }}
+  </div>
+
+  <div>
+    {{ user.keywords }}
+  </div>
+
+  <div *ngFor="let lesson of lessons; let i = index" class="lesson-holder ">
+    <div class="lessonTime">
+      {{lesson.dateStr}}&emsp;&emsp;{{lesson.timeStr}}
+    </div>
+    <div class="lessonPlace">
+      {{lesson.place}} <ion-icon name="pin"></ion-icon>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+  
 </ion-content>
