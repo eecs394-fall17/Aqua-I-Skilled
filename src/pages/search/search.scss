@@ -1,7 +1,8 @@
 page-search {
 
   @import "../../theme/header";
-
+  @import "../../theme/skills";
+  
   .searchbar-firsttime {
     top: 35%;
   }
@@ -21,47 +22,9 @@ page-search {
     width: auto;
   }
 
-  .skill-img {
-    float: left;
-    width: 20%;
-    padding-right: 10px;
-  }
-
-  .skill-leftinfo {
-    padding-left: 5%;
-    float: left;
-    width: 60%;
-  }
-
-  .skill-img,
-  .skill-leftinfo {
-    margin-bottom: 10px;
-  }
-
-  .skill-name {
-    font-size: 22px;
-  }
-
-  .skill-desc {
-    font-size: 15px;
-  }
-
-  .skill-star ion-icon {
-    font-size: 18px;
-  }
-
-  .skill-dist {
-    text-align: center;
-    font-size: 16px;
-  }
-
-  .skill-rightinfo {
-    float: left;
-    width: 20%;
-  }
-
   .search {
     position: fixed;
+    float: left;
     width: 95%;
   }
 }

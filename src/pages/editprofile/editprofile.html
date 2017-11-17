@@ -28,15 +28,54 @@
     <div style="clear: both;"></div>
   </div>
 
-  <div class="">
+  <div class="header-ps">
+    Your Description
+  </div>
+  <div class="inputBox">
     {{ user.description }}
   </div>
 
-  <div>
-    {{ user.keywords }}
+  <div class="header-ps">
+    Your Skills
+  </div>
+<!--
+  <select id="skillSelect" (change)="addSkill()" class="dropdown dropdownStyle2">
+    <option disabled selected hidden> Skills </option>
+    <option *ngFor="let skill of masterskills" value="{{skill}}">{{skill}}</option>
+  </select>
+-->
+  <div class="inputBox">
+    <div *ngFor="let keyword of user.keywords.split(';')">
+      <div class="skillItem">
+        {{ keyword }}
+      </div>
+    </div>
   </div>
 
+  <div class="header-ps">
+    Add To Your Lessons
+  </div>
+  <form class="lesson-form" (ngSubmit)="addLesson()">   
+    <ion-item>
+      <ion-label floating >Start Date</ion-label>
+      <ion-datetime displayFormat="YYYY/MM/DD" pickerFormat="YYYY MMM DDD" [(ngModel)]="newLesson.time" [ngModelOptions]="{standalone: true}"></ion-datetime>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label floating >Start Time</ion-label>
+      <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="newLesson.time" [ngModelOptions]="{standalone: true}"></ion-datetime>
+    </ion-item>
+    
+    <button ion-button type="submit" block>Add Lesson Time</button>
+  </form>
+
+  <div class="header-ps">
+    Your Lessons
+  </div>
   <div *ngFor="let lesson of lessons; let i = index" class="lesson-holder ">
+    <div (click)="removeLesson(lesson)" class="lessonRadio">
+      <ion-icon style="color:red" name="remove-circle"></ion-icon>
+    </div>
     <div class="lessonTime">
       {{lesson.dateStr}}&emsp;&emsp;{{lesson.timeStr}}
     </div>

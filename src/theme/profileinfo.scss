@@ -1,0 +1,41 @@
+.inputBox {
+  border: 1px solid #6297BC;
+  width: 100%;
+  float: left;
+  padding: 10px;
+  margin-bottom: 10px;
+  color: #939393;
+}
+//
+// .inputBox::placeholder {
+//   font-color: red;
+// }
+
+.dropdownStyle1 {
+  width: 55%;
+  float: left;
+  padding: 2%;
+  background-color: #F3F3F3;
+  margin-right: 5%;
+  }
+
+.dropdownStyle2 {
+  width: 100%;
+  float: left;
+  padding: 2%;
+  margin-bottom: 5%;
+  background-color: #F3F3F3;
+}
+
+input {
+  color: #939393;
+  font-weight: bold;
+}
+
+textarea {
+  color: #939393;
+}
+
+select {
+  color: #545454;
+}
