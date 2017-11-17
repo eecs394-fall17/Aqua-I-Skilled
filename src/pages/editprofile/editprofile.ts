@@ -18,7 +18,10 @@ export class EditprofilePage {
               public dbProv: FirebaseProvider,
               public navParams: NavParams) {
     this.user = this.navParams.get('user');
-    
+
+    var placeString = this.user["name"];
+    var placeVar = placeString + "'s Place";
+
     dbProv.db.list('/lessons', ref => ref.orderByChild('name').equalTo(this.user['name'])).snapshotChanges().subscribe(lessons => {
       this.lessons = [];
 
