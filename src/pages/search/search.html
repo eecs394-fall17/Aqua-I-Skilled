@@ -5,14 +5,19 @@
       <div style="width: 50%;"><img src="./assets/imgs/title.png"></div>
     </div>
     <ion-buttons right>
+      <button ion-button icon-only>
+        <ion-icon name="search"></ion-icon>
+      </button>
       <button ion-button icon-only (click)="createProfile()">
-        <ion-icon name="person"></ion-icon>
+        <ion-icon style="padding-left:20%; padding-right:20%;" name="person"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding style="background-position: center center; background-size: contain; background-repeat: no-repeat; background-image: url('./assets/imgs/searchBackground.png');" id="background-content">
+<ion-content>
+<div padding style="background-position: center center; background-size: contain; background-repeat: no-repeat; background-image: url('./assets/imgs/searchBackground.png'); height: 100%;" id="background-content">
+
 
 <!--<input type="file" (change)="previewFile()"><br>-->
 <!--<a (click)="insertUsers()">Insert Users</a><br/>-->
@@ -23,6 +28,8 @@
 <!--  <p style="margin: 0px; text-align: center; font-size: 25px;">What would you like to learn today?</p>-->
 
   <ion-searchbar
+    id="searchbar"
+    class="search"
     [(ngModel)]="skillSearch"
     [showCancelButton]="shouldShowCancel"
     [debounce]="1000"
@@ -49,16 +56,14 @@
       <div class="skill-rightinfo">
         <div class="skill-dist">
           {{result["distance"]}} mi.
-          <br/>
-          <p style="color: green;"><strong>{{result["price"]}} Pts</strong></p>
         </div>
-        <!-- adding temporary cost div without firebase on search page  -->
         <div class="skill-cost" style="color: green;">
-          <!-- {{result["cost"]}} -->20 Pts
+          <strong>{{result["price"]}} Pts</strong>
         </div>
       </div>
     </ion-card-content>
   </ion-card>
   </div>
 
+</div>
 </ion-content>

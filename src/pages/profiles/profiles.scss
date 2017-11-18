@@ -1,0 +1,16 @@
+page-profiles {
+
+  @import "../../theme/header";
+  @import "../../theme/skills";
+
+  .profile-img {
+    float: left;
+    max-width: 80px;
+    max-height: 80px;
+    width: 20%;
+  }
+
+  ion-card img {
+    width: auto;
+  }
+}

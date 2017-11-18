@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <div class="app-header">
+      <div style="margin-left: 10%; width: 30%;"><img src="./assets/imgs/logo.png"></div>
+      <div style="width: 50%;"><img src="./assets/imgs/title.png"></div>
+    </div>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="goToSearch()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="search-results">
+  <ion-card *ngFor="let result of users" class="search-result" (click)="goToEditProfile(result)">
+    <ion-card-content>
+      <img class="profile-img" src="{{ result['image'] }}">
+      <div class="skill-leftinfo">
+        <div class="skill-name">
+          {{ result["keywords"].split(';')[0] | capWord }}
+        </div>
+        <div class="skill-desc">
+          {{result["name"]}}
+        </div>
+        <div class="skill-star">
+          <ion-icon *ngFor="let starCount of result['starRange']" name="star"></ion-icon>
+        </div>
+      </div>
+      <div class="skill-rightinfo">
+        <div class="skill-dist">
+          {{result["distance"]}} mi.
+        </div>
+        <div class="skill-cost" style="color: green;">
+          <strong>{{result["price"]}} Pts</strong>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  </div>
+
+</ion-content>

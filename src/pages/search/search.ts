@@ -25,11 +25,14 @@ export class SearchPage {
 
   users:any;
 
+  ngOnInit() {
+  }
+
   pullFilterSkills() {
     this. dbProv.db.list("/users").valueChanges().subscribe(users => {
       this.users = users;
       for (var i = 0; i < users.length; i++) {
-        var star = parseInt(users[i]['rating']);
+        var star = parseInt(parseFloat(users[i]['rating']).toFixed(0));
         this.users[i]['starRange'] = Array(star);
 
         this.filterSkills();
@@ -92,7 +95,7 @@ export class SearchPage {
 
   // Plus button opens createProfile page
   createProfile(result){
-    this.navCtrl.push(CreateprofilePage, {
+    this.navCtrl.setRoot(CreateprofilePage, {
           skill: result
     });
   }
