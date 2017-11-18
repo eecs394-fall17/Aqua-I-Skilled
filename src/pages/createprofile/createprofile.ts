@@ -26,7 +26,7 @@ masterskills = ['3d printing', 'Accordion', 'Acrylic paint', 'Acting', 'Add fuel
     this.user = {
       name: "",
       zip: "",
-      gender: "",
+      gender: "Gender",
       age: "",
       keywords: "",
       description: "",
