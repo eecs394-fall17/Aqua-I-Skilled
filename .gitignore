@@ -6,4 +6,4 @@ resources/
 *.DS_Store
 *.log
 *.swp
-.sourcemaps/main.js.map
+*.map
