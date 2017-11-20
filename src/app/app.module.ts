@@ -1,8 +1,9 @@
-import { NgModule, ErrorHandler } from '@angular/core';
+import { NgModule, ErrorHandler, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler, NavController, NavParams } from 'ionic-angular';
 import { MyApp } from './app.component';
 
+// Pages
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
@@ -17,6 +18,10 @@ import { ProfilesPage } from '../pages/profiles/profiles';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+// Components
+import { ProfileBarComponent } from '../components/profilebar/profilebar.component';
+import { HeaderBarComponent } from '../components/headerbar/headerbar.component';
 
 // Pipes
 import { CapWord } from '../pipes/capWord';
@@ -47,6 +52,8 @@ import { firebaseConfig } from './app.firebaseEnv';
     EditprofilePage,
     ProfilePage,
     ProfilesPage,
+    ProfileBarComponent,
+    HeaderBarComponent,
     CapWord,
   ],
   imports: [
@@ -57,7 +64,9 @@ import { firebaseConfig } from './app.firebaseEnv';
     AngularFireAuthModule,
     AngularFirestoreModule.enablePersistence(),
   ],
-  bootstrap: [IonicApp],
+  bootstrap: [
+    IonicApp,
+  ],
   entryComponents: [
     MyApp,
     AboutPage,
@@ -70,6 +79,8 @@ import { firebaseConfig } from './app.firebaseEnv';
     ProfilePage,
     ProfilesPage,
     SearchPage,
+    ProfileBarComponent,
+    HeaderBarComponent,
     AddSkillPage,
   ],
   providers: [

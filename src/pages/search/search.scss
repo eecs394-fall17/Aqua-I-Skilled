@@ -1,10 +1,15 @@
 page-search {
 
-  @import "../../theme/header";
   @import "../../theme/skills";
   
   .searchbar-firsttime {
     top: 35%;
+  }
+
+  .searchbar {
+    background-color: white;
+    padding-top: 35px;
+    top: 50px;
   }
 
   .search-results ion-card:nth-child(odd) {

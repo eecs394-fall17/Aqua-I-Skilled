@@ -3,7 +3,6 @@ import { NavController, NavParams } from 'ionic-angular';
 import { EditprofilePage } from '../editprofile/editprofile';
 
 import { FirebaseProvider } from '../../providers/firebase';
-import { SearchPage } from '../search/search';
 
 @Component({
   selector: 'page-createprofile',
@@ -47,11 +46,6 @@ masterskills = ['3d printing', 'Accordion', 'Acrylic paint', 'Acting', 'Add fuel
     this.dbProv.db.list('/newusers').push(this.user);
     this.navCtrl.push(EditprofilePage, {
       user: this.user
-    });
-  }
-
-  goToSearch() {
-    this.navCtrl.setRoot(SearchPage, {
     });
   }
 

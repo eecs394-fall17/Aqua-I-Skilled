@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import { ProfilePage } from '../profile/profile';
-import { CreateprofilePage } from '../createprofile/createprofile';
 
 import { FirebaseProvider } from '../../providers/firebase';
 import { SearchProvider } from '../../providers/search';
@@ -90,13 +89,6 @@ export class SearchPage {
   confirmTrans(result){
     this.navCtrl.push(ProfilePage, {
       user: result
-    });
-  }
-
-  // Plus button opens createProfile page
-  createProfile(result){
-    this.navCtrl.setRoot(CreateprofilePage, {
-          skill: result
     });
   }
 
