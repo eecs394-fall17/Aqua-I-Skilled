@@ -6,6 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { SearchPage } from '../pages/search/search';
 import { AddSkillPage } from '../pages/addskill/addskill';
 import { TransconfirmPage } from '../pages/transconfirm/transconfirm';
+import { FinalconfirmPage } from '../pages/finalconfirm/finalconfirm';
 import { ProfilePage } from '../pages/profile/profile';
 import { ProfilesPage } from '../pages/profiles/profiles';
 import { CreateprofilePage } from '../pages/createprofile/createprofile';
