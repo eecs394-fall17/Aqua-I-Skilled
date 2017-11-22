@@ -27,19 +27,18 @@
       <div style="clear: both;"></div>
     </div>
 
+    <div *ngFor="let keyword of keywords; let i = index">
+      <div class="skillEntry">
+        <div class="skillItem">{{ keyword }}</div>
+        <input type="text" placeholder="Points" style="width: 20%;" class="inputBox" value="{{pnts[i]}}">
+        <ion-icon class="removeSkillBtn" (click)="removeSkill(keyword)" name="remove-circle"></ion-icon>
+      </div>
+    </div>
+
     <select id="skillSelect" (change)="addSkill()" class="dropdown dropdownStyle2">
       <option disabled selected hidden> Skills </option>
       <option *ngFor="let skill of masterskills" value="{{skill}}">{{skill}}</option>
     </select>
-
-    <div class="inputBox">
-      <div style="font-weight:bold">All Skills Added:</div>
-      <div *ngFor="let keyword of keywords">
-        <div (click)="removeSkill(keyword)" class="skillItem">{{ keyword }}
-          <ion-icon style="color:red" name="remove-circle"></ion-icon>
-        </div>
-      </div>
-    </div>
 
     <textarea id="descText" [(ngModel)]="user.description" name="description" class="text-input, inputBox" rows=5 placeholder="Description Example: I am a professional chef with 25 years of experience in cooking Chinese and Thai food. I currently work at Novotei."></textarea>
 

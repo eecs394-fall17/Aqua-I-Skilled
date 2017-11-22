@@ -6,10 +6,31 @@
   margin-bottom: 10px;
   color: #939393;
 }
-//
-// .inputBox::placeholder {
-//   font-color: red;
-// }
+
+.skillEntry {
+  margin-bottom: 20px;
+}
+
+.skillItem {
+  float: left;
+  width: 60%;
+  margin: 0 5% 10px 0;
+  padding: 10px 0px 10px 10px;
+  text-align: left;
+  background-color: lightgrey;
+  border-radius: .5em;
+  font-size: 15px;
+}
+
+.removeSkillBtn {
+  color:red;
+  float: left;
+  width: 10%;
+  margin-left: 12px;
+  text-align: center;
+  padding-top: 6px; 
+  font-size: 24px; 
+}
 
 .dropdownStyle1 {
   width: 55%;
