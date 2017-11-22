@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 import { TransconfirmPage } from '../transconfirm/transconfirm';
-import { SearchPage } from '../search/search';
 
 import { FirebaseProvider } from '../../providers/firebase';
 
@@ -80,11 +79,4 @@ export class ProfilePage {
     else
       this.openHolder = (ind + 1) % 2;
   }
-
-  goToSearch() {
-    this.navCtrl.setRoot(SearchPage, {
-    });
-  }
-
-
 }

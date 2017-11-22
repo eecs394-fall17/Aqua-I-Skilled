@@ -1,0 +1,17 @@
+<div class="profile-holder hacky-margin">
+  <img class="profile-img" src="{{ user['image'] }}">
+  <div class="profile-info">
+    <div class="profile-name">
+      {{user["name"]}}
+    </div>
+    <div class="profile-dist">
+      {{user["distance"]}} mi.
+    </div>
+    <div class="profile-star">
+      <ion-icon *ngFor="let starCount of user['starRange']" name="star" style="float: left;"></ion-icon>
+      <div style="float: left; padding-left: 10px;">{{ user['rating'] }}</div>
+    </div>
+  </div>
+
+  <div style="clear: both;"></div>
+</div>

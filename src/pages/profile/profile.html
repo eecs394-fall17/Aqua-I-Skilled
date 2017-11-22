@@ -1,38 +1,11 @@
 <ion-header>
-  <ion-navbar>
-    <div class="app-header">
-      <div style="width: 30%;"><img src="./assets/imgs/logo.png"></div>
-      <div style="width: 70%;"><img src="./assets/imgs/title.png"></div>
-    </div>
-    <ion-buttons right>
-      <button ion-button icon-only (click)="goToSearch()">
-        <ion-icon name="search"></ion-icon>
-      </button>
-    </ion-buttons>
-  </ion-navbar>
+  <page-headerbar></page-headerbar>
 </ion-header>
 
 <ion-content padding>
-  <div class="profile-holder hacky-margin">
-    <img class="profile-img" src="{{ user['image'] }}">
-    <div class="profile-info">
-      <div class="profile-name">
-        {{user["name"]}}
-      </div>
-      <div class="profile-dist">
-        {{user["distance"]}} mi.
-      </div>
-      <div class="profile-star">
-        <ion-icon *ngFor="let starCount of user['starRange']" name="star"></ion-icon>
-        <div style="float: right; padding-right: 40%;">{{ user['rating'] }}</div>
-      </div>
-    </div>
-
-    <div style="clear: both;"></div>
-  </div>
+  <page-profilebar [user]="user"></page-profilebar>
 
   <div style="align: center;"class="accordion">
-
 
     <div class="toggle" [ngClass]="{'section-active': openHolder == 0, 'section': openHolder != 0}">
       <div (click)="toggleAccordion(0)" class="profileTitle">
