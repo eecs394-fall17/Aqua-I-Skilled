@@ -6,3 +6,4 @@ resources/
 *.DS_Store
 *.log
 *.swp
+*.map
