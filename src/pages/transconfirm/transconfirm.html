@@ -34,7 +34,7 @@
   <ion-toolbar>
     <div class="book-holder">
       <div class="book-info"><strong>{{ user["price"] }} Pts</strong></div>
-      <button disabled=true ion-button color="babyblue" large item-right>Request</button>
+      <button class="reqButton" ion-button color="babyblue" large item-right (click)="confirmReq()">Request</button>
     </div>
   </ion-toolbar>
 </ion-footer>

@@ -12,6 +12,7 @@ import { SearchPage } from '../pages/search/search';
 import { AddSkillPage } from '../pages/addskill/addskill';
 import { TransconfirmPage } from '../pages/transconfirm/transconfirm';
 import { ProfilePage } from '../pages/profile/profile';
+import { FinalconfirmPage } from '../pages/finalconfirm/finalconfirm';
 import { CreateprofilePage } from '../pages/createprofile/createprofile';
 import { EditprofilePage } from '../pages/editprofile/editprofile';
 import { ProfilesPage } from '../pages/profiles/profiles';
@@ -48,6 +49,7 @@ import { firebaseConfig } from './app.firebaseEnv';
     SearchPage,
     AddSkillPage,
     TransconfirmPage,
+    FinalconfirmPage,
     CreateprofilePage,
     EditprofilePage,
     ProfilePage,
@@ -74,6 +76,7 @@ import { firebaseConfig } from './app.firebaseEnv';
     HomePage,
     TabsPage,
     TransconfirmPage,
+    FinalconfirmPage,
     CreateprofilePage,
     EditprofilePage,
     ProfilePage,
