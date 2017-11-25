@@ -4,6 +4,8 @@ import { EditprofilePage } from '../editprofile/editprofile';
 
 import { FirebaseProvider } from '../../providers/firebase';
 
+import { Storage } from '@ionic/storage';
+
 @Component({
   selector: 'page-createprofile',
   templateUrl: 'createprofile.html',
@@ -22,7 +24,8 @@ masterskills = ['3d printing', 'Accordion', 'Acrylic paint', 'Acting', 'Add fuel
 
   constructor(public navCtrl: NavController,
               private dbProv: FirebaseProvider,
-              public navParams: NavParams) {
+              public navParams: NavParams,
+              private storage: Storage) {
     this.user = {
       name: "",
       zip: "",
@@ -47,6 +50,7 @@ masterskills = ['3d printing', 'Accordion', 'Acrylic paint', 'Acting', 'Add fuel
     this.user.pnts = this.pnts.join(";");
 
     this.dbProv.db.list('/newusers').push(this.user);
+    this.storage.set('account',this.user.name);
     this.navCtrl.push(EditprofilePage, {
       user: this.user
     });

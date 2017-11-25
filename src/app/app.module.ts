@@ -1,6 +1,8 @@
 import { NgModule, ErrorHandler, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler, NavController, NavParams } from 'ionic-angular';
+import { IonicStorageModule } from '@ionic/storage';
+
 import { MyApp } from './app.component';
 
 // Pages
@@ -65,6 +67,7 @@ import { firebaseConfig } from './app.firebaseEnv';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFirestoreModule.enablePersistence(),
+    IonicStorageModule.forRoot(),
   ],
   bootstrap: [
     IonicApp,

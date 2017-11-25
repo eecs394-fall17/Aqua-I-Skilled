@@ -17,6 +17,9 @@
     <button  ion-button icon-only (click)="createProfile()">
       <ion-icon style="padding-left:20%; padding-right:20%; padding-top: 60%; color:#3E7EA2" name="person"></ion-icon>
     </button>
+    <button *ngIf="account == undefined" ion-button icon-only (click)="signIn()">
+      <ion-icon style="padding-left:20%; padding-right:20%; padding-top: 60%; color:#3E7EA2" name="log-in"></ion-icon>
+    </button>
   </ion-buttons>
 </ion-navbar>
 <!--

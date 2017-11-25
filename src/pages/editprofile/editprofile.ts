@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+
 import { CreateprofilePage } from '../createprofile/createprofile';
+import { SearchPage } from '../../pages/search/search';
 
 import { FirebaseProvider } from '../../providers/firebase';
+
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-editprofile',
@@ -19,7 +23,8 @@ masterskills = ['3d printing', 'Accordion', 'Acrylic paint', 'Acting', 'Add fuel
 
   constructor(public navCtrl: NavController,
               public dbProv: FirebaseProvider,
-              public navParams: NavParams) {
+              public navParams: NavParams,
+              private storage: Storage) {
     this.user = this.navParams.get('user');
 
     var placeString = this.user["name"];
@@ -66,6 +71,13 @@ masterskills = ['3d printing', 'Accordion', 'Acrylic paint', 'Acting', 'Add fuel
   removeLesson(lesson) {
     this.dbProv.db.list("/lessons").remove(lesson.key);
   }
+
+  signOut() {
+    this.storage.remove('account').then(() => {
+      this.navCtrl.setRoot(SearchPage)      
+    });
+  }
+
 /*
   addSkill() {
     var sel = document.getElementById('skillSelect') as HTMLSelectElement;
