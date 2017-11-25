@@ -33,9 +33,9 @@ export class SearchPage {
       for (var i = 0; i < users.length; i++) {
         var star = parseInt(parseFloat(users[i]['rating']).toFixed(0));
         this.users[i]['starRange'] = Array(star);
-
-        this.filterSkills();
       }
+    
+      this.filterSkills();
     });
   }
 

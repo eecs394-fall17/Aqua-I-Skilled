@@ -32,6 +32,7 @@ import { CapWord } from '../pipes/capWord';
 // Providers
 import { FirebaseProvider } from '../providers/firebase';
 import { SearchProvider } from '../providers/search';
+import { Camera } from '@ionic-native/camera';
 
 // Firebase config
 import { AngularFireModule } from 'angularfire2';
@@ -94,6 +95,7 @@ import { firebaseConfig } from './app.firebaseEnv';
     SplashScreen,
     FirebaseProvider,
     SearchProvider,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

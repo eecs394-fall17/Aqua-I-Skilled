@@ -5,11 +5,12 @@ import { EditprofilePage } from '../editprofile/editprofile';
 import { FirebaseProvider } from '../../providers/firebase';
 
 import { Storage } from '@ionic/storage';
+import { Camera, CameraOptions } from '@ionic-native/camera';
 
 @Component({
   selector: 'page-createprofile',
   templateUrl: 'createprofile.html',
-  providers: [FirebaseProvider],
+  providers: [FirebaseProvider, Camera],
 })
 export class CreateprofilePage {
 
@@ -25,7 +26,8 @@ masterskills = ['3d printing', 'Accordion', 'Acrylic paint', 'Acting', 'Add fuel
   constructor(public navCtrl: NavController,
               private dbProv: FirebaseProvider,
               public navParams: NavParams,
-              private storage: Storage) {
+              private storage: Storage,
+              private camera: Camera) {
     this.user = {
       name: "",
       zip: "",
@@ -80,5 +82,25 @@ masterskills = ['3d printing', 'Accordion', 'Acrylic paint', 'Acting', 'Add fuel
 
     this.keywords = newKeys;
     this.pnts = newPnts;
+  }
+
+  addPhoto() {
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE
+    }
+
+    this.camera.getPicture(options).then((imageData) => {
+     // imageData is either a base64 encoded string or a file URI
+     // If it's base64:
+     let base64Image = 'data:image/jpeg;base64,' + imageData;
+     console.log("base 64");
+     console.log(base64Image);
+    }, (err) => {
+     // Handle error
+     console.log(err);
+    });
   }
 }
