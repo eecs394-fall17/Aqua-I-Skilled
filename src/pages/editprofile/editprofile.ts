@@ -78,18 +78,7 @@ masterskills = ['3d printing', 'Accordion', 'Acrylic paint', 'Acting', 'Add fuel
     });
   }
 
-/*
-  addSkill() {
-    var sel = document.getElementById('skillSelect') as HTMLSelectElement;
-    var txt = sel.options[sel.selectedIndex].text;
-    if (this.keywords.findIndex(x => x == txt) == -1) {
-      this.keywords.push(txt);
-      //Push to database also
-    }
+  parseStrInt(val) {
+    return parseInt(val);
   }
-
-  removeSkill(skill) {
-    this.keywords = this.keywords.filter(x => x != skill);
-  }
-*/
 }

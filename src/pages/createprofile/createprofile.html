@@ -30,7 +30,7 @@
     <div *ngFor="let keyword of keywords; let i = index">
       <div class="skillEntry">
         <div class="skillItem">{{ keyword }}</div>
-        <input type="text" placeholder="Points" style="width: 20%;" class="inputBox" value="{{pnts[i]}}">
+        <input type="text" placeholder="Points" style="width: 20%;" class="inputBox" id="pnts-{{i}}" value="{{pnts[i]}}" (change)="pntsChange(i)">
         <ion-icon class="removeSkillBtn" (click)="removeSkill(keyword)" name="remove-circle"></ion-icon>
       </div>
     </div>

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+
+import { SearchPage } from '../search/search';
 import { EditprofilePage } from '../editprofile/editprofile';
 
 import { FirebaseProvider } from '../../providers/firebase';
@@ -50,12 +52,19 @@ masterskills = ['3d printing', 'Accordion', 'Acrylic paint', 'Acting', 'Add fuel
   logForm() {
     this.user.keywords = this.keywords.join(';');
     this.user.pnts = this.pnts.join(";");
+    this.user.balance = 100;
 
     this.dbProv.db.list('/newusers').push(this.user);
     this.storage.set('account',this.user.name);
+    this.navCtrl.setRoot(SearchPage);
     this.navCtrl.push(EditprofilePage, {
       user: this.user
     });
+  }
+
+  pntsChange(i) {
+    var el = document.getElementById('pnts-' + i);
+    this.pnts[i] = el.value;
   }
 
   addSkill() {
