@@ -14,5 +14,21 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "cordova-plugin-camera": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-camera@^3.0.0"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-device": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-device@1.1.4"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

@@ -50,11 +50,14 @@ masterskills = ['3d printing', 'Accordion', 'Acrylic paint', 'Acting', 'Add fuel
   }
 
   logForm() {
+    if (this.user.name == "")
+      return;
+
     this.user.keywords = this.keywords.join(';');
     this.user.pnts = this.pnts.join(";");
     this.user.balance = 100;
 
-    this.dbProv.db.list('/newusers').push(this.user);
+    this.dbProv.addUserWithImage(this.user);
     this.storage.set('account',this.user.name);
     this.navCtrl.setRoot(SearchPage);
     this.navCtrl.push(EditprofilePage, {
@@ -63,7 +66,7 @@ masterskills = ['3d printing', 'Accordion', 'Acrylic paint', 'Acting', 'Add fuel
   }
 
   pntsChange(i) {
-    var el = document.getElementById('pnts-' + i);
+    var el = document.getElementById('pnts-' + i) as HTMLInputElement;
     this.pnts[i] = el.value;
   }
 
@@ -95,6 +98,7 @@ masterskills = ['3d printing', 'Accordion', 'Acrylic paint', 'Acting', 'Add fuel
 
   addPhoto() {
     const options: CameraOptions = {
+      //sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
       quality: 100,
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
@@ -102,11 +106,8 @@ masterskills = ['3d printing', 'Accordion', 'Acrylic paint', 'Acting', 'Add fuel
     }
 
     this.camera.getPicture(options).then((imageData) => {
-     // imageData is either a base64 encoded string or a file URI
-     // If it's base64:
-     let base64Image = 'data:image/jpeg;base64,' + imageData;
-     console.log("base 64");
-     console.log(base64Image);
+      let base64Image = 'data:image/jpeg;base64,' + imageData;
+      this.user.image = base64Image;
     }, (err) => {
      // Handle error
      console.log(err);

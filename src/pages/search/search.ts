@@ -55,7 +55,7 @@ export class SearchPage {
     var dbProv = this.dbProv;
     reader.addEventListener("load", function () {
       //console.log(reader.result);
-      dbProv.addImage(reader.result, file);
+      dbProv.addImage(reader.result, file['name'].split('.')[0]);
     }, false);
 
     if (file) {

@@ -6,8 +6,10 @@
   <form (ngSubmit)="logForm()">
     <div class="personal-header">
       <div style="width: 30%; float: left;">
-        <img src="./assets/imgs/defaultProfile.png">
-        <a (click)="addPhoto()" style="color: #545454">Add Profile Pic</a>
+        <div>
+          <img style="max-height: 140px; display: block; float: none; margin: auto;" src="{{user.image || './assets/imgs/defaultProfile.png'}}">
+          <a (click)="addPhoto()" style="float: left; text-align: center; display: block; margin: auto; width: 100%; padding: 10px; color: #545454">Add Profile Pic</a>
+        </div>
       </div>
 
       <div style="width: 70%; float: left;">
