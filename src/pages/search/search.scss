@@ -4,11 +4,12 @@ page-search {
 
   .searchbar-firsttime {
     top: 35%;
+    padding: 0 !important;
   }
 
   .searchbar {
     background-color: white;
-    padding-top: 35px;
+    padding: 35px 0 0 0 !important;
     top: 50px;
   }
 
@@ -69,8 +70,9 @@ page-search {
 
   .search {
     position: fixed;
+    left: 8px;
     float: left;
     width: 95%;
-
+    right: 8px;
   }
 }

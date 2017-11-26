@@ -1,13 +1,18 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+
+import { SearchPage } from '../search/search';
 import { EditprofilePage } from '../editprofile/editprofile';
 
 import { FirebaseProvider } from '../../providers/firebase';
 
+import { Storage } from '@ionic/storage';
+import { Camera, CameraOptions } from '@ionic-native/camera';
+
 @Component({
   selector: 'page-createprofile',
   templateUrl: 'createprofile.html',
-  providers: [FirebaseProvider],
+  providers: [FirebaseProvider, Camera],
 })
 export class CreateprofilePage {
 
@@ -22,7 +27,9 @@ masterskills = ['3d printing', 'Accordion', 'Acrylic paint', 'Acting', 'Add fuel
 
   constructor(public navCtrl: NavController,
               private dbProv: FirebaseProvider,
-              public navParams: NavParams) {
+              public navParams: NavParams,
+              private storage: Storage,
+              private camera: Camera) {
     this.user = {
       name: "",
       zip: "",
@@ -43,13 +50,24 @@ masterskills = ['3d printing', 'Accordion', 'Acrylic paint', 'Acting', 'Add fuel
   }
 
   logForm() {
+    if (this.user.name == "")
+      return;
+
     this.user.keywords = this.keywords.join(';');
     this.user.pnts = this.pnts.join(";");
+    this.user.balance = 100;
 
-    this.dbProv.db.list('/newusers').push(this.user);
+    this.dbProv.addUserWithImage(this.user);
+    this.storage.set('account',this.user.name);
+    this.navCtrl.setRoot(SearchPage);
     this.navCtrl.push(EditprofilePage, {
       user: this.user
     });
+  }
+
+  pntsChange(i) {
+    var el = document.getElementById('pnts-' + i) as HTMLInputElement;
+    this.pnts[i] = el.value;
   }
 
   addSkill() {
@@ -76,5 +94,23 @@ masterskills = ['3d printing', 'Accordion', 'Acrylic paint', 'Acting', 'Add fuel
 
     this.keywords = newKeys;
     this.pnts = newPnts;
+  }
+
+  addPhoto() {
+    const options: CameraOptions = {
+      //sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE
+    }
+
+    this.camera.getPicture(options).then((imageData) => {
+      let base64Image = 'data:image/jpeg;base64,' + imageData;
+      this.user.image = base64Image;
+    }, (err) => {
+     // Handle error
+     console.log(err);
+    });
   }
 }

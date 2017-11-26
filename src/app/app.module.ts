@@ -1,6 +1,8 @@
 import { NgModule, ErrorHandler, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler, NavController, NavParams } from 'ionic-angular';
+import { IonicStorageModule } from '@ionic/storage';
+
 import { MyApp } from './app.component';
 
 // Pages
@@ -30,6 +32,7 @@ import { CapWord } from '../pipes/capWord';
 // Providers
 import { FirebaseProvider } from '../providers/firebase';
 import { SearchProvider } from '../providers/search';
+import { Camera } from '@ionic-native/camera';
 
 // Firebase config
 import { AngularFireModule } from 'angularfire2';
@@ -65,6 +68,7 @@ import { firebaseConfig } from './app.firebaseEnv';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFirestoreModule.enablePersistence(),
+    IonicStorageModule.forRoot(),
   ],
   bootstrap: [
     IonicApp,
@@ -91,6 +95,7 @@ import { firebaseConfig } from './app.firebaseEnv';
     SplashScreen,
     FirebaseProvider,
     SearchProvider,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

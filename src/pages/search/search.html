@@ -25,7 +25,7 @@
     [ngClass]="{'searchbar-firsttime': searchedYet == 0, 'searchbar': searchedYet == 1}">
   </ion-searchbar>
 
-  <div class="search-results">
+  <div class="search-results" style="padding-top: 50px;">
   <ion-card *ngFor="let result of users" class="search-result" (click)="confirmTrans(result)">
     <ion-card-content>
       <img class="profile-img" src="{{ result['image'] }}">

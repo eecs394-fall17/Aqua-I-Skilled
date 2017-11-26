@@ -34,19 +34,20 @@
   <div class="header-ps">
     Your Skills
   </div>
-<!--
-  <select id="skillSelect" (change)="addSkill()" class="dropdown dropdownStyle2">
-    <option disabled selected hidden> Skills </option>
-    <option *ngFor="let skill of masterskills" value="{{skill}}">{{skill}}</option>
-  </select>
--->
-  <div class="inputBox">
-    <div *ngFor="let keyword of user.keywords.split(';')">
-      <div class="skillItem">
-        {{ keyword }}
-      </div>
+
+  <div *ngFor="let keyword of user.keywords.split(';'); let i = index">
+    <div class="skillEntry">
+      <div class="skillItem">{{ keyword }}</div>
+      <input disabled="true" type="text" placeholder="Points" style="width: 20%;" class="inputBox" value="{{user.pnts != undefined ? parseStrInt(user.pnts.split(';')[i]) : 0}}">
+      <div style="clear: both;"></div>
     </div>
   </div>
+
+  <div class="header-ps">
+    Your Balance    
+  </div>
+
+  <div>{{ user.balance }}</div>
 
   <div class="header-ps">
     Add To Your Lessons
@@ -80,5 +81,7 @@
     </div>
     <div style="clear: both;"></div>
   </div>
+
+  <button ion-button large float-right class="btn" color="babyblue" (click)="signOut()">Sign Out</button>
   
 </ion-content>

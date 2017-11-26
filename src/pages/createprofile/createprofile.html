@@ -6,8 +6,10 @@
   <form (ngSubmit)="logForm()">
     <div class="personal-header">
       <div style="width: 30%; float: left;">
-        <img src="./assets/imgs/defaultProfile.png">
-        <p style="color: #545454">Add Profile Pic</p>
+        <div>
+          <img style="max-height: 140px; display: block; float: none; margin: auto;" src="{{user.image || './assets/imgs/defaultProfile.png'}}">
+          <a (click)="addPhoto()" style="float: left; text-align: center; display: block; margin: auto; width: 100%; padding: 10px; color: #545454">Add Profile Pic</a>
+        </div>
       </div>
 
       <div style="width: 70%; float: left;">
@@ -30,7 +32,7 @@
     <div *ngFor="let keyword of keywords; let i = index">
       <div class="skillEntry">
         <div class="skillItem">{{ keyword }}</div>
-        <input type="text" placeholder="Points" style="width: 20%;" class="inputBox" value="{{pnts[i]}}">
+        <input type="text" placeholder="Points" style="width: 20%;" class="inputBox" id="pnts-{{i}}" value="{{pnts[i]}}" (change)="pntsChange(i)">
         <ion-icon class="removeSkillBtn" (click)="removeSkill(keyword)" name="remove-circle"></ion-icon>
       </div>
     </div>
