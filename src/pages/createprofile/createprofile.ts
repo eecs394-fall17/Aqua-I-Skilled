@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 import { SearchPage } from '../search/search';
 import { EditprofilePage } from '../editprofile/editprofile';
+import { AlertController } from 'ionic-angular';
 
 import { FirebaseProvider } from '../../providers/firebase';
 
@@ -29,6 +30,7 @@ masterskills = ['3d printing', 'Accordion', 'Acrylic paint', 'Acting', 'Add fuel
               private dbProv: FirebaseProvider,
               public navParams: NavParams,
               private storage: Storage,
+              public alertCtrl: AlertController,
               private camera: Camera) {
     this.user = {
       name: "",
@@ -112,5 +114,14 @@ masterskills = ['3d printing', 'Accordion', 'Acrylic paint', 'Acting', 'Add fuel
      // Handle error
      console.log(err);
     });
+  }
+
+  popupPoints() {
+    var comp = this;
+
+    let alert = this.alertCtrl.create({
+      message: 'Our community skill sharing platform uses points for payment. Each account is granted 100 points to get started. Earn points when your friends and family sign up, or when you teach a lesson.'
+    });
+    alert.present();
   }
 }

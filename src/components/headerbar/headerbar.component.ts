@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
-import { AlertController } from 'ionic-angular'
+import { AlertController } from 'ionic-angular';
 
 import { CreateprofilePage } from '../../pages/createprofile/createprofile';
 import { EditprofilePage } from '../../pages/editprofile/editprofile';
@@ -29,7 +29,7 @@ export class HeaderBarComponent {
 
       this.dbProv.db.list('/newusers', ref => ref.orderByChild('name').equalTo(val)).snapshotChanges().subscribe(function(users) {
         if (users.length > 0) {
-          comp.setAccount(users[0].payload.val()); 
+          comp.setAccount(users[0].payload.val());
         }
       });
     });
