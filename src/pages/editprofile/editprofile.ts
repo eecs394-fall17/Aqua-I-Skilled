@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { AlertController } from 'ionic-angular';
 
 import { CreateprofilePage } from '../createprofile/createprofile';
 import { SearchPage } from '../../pages/search/search';
@@ -24,6 +25,7 @@ masterskills = ['3d printing', 'Accordion', 'Acrylic paint', 'Acting', 'Add fuel
   constructor(public navCtrl: NavController,
               public dbProv: FirebaseProvider,
               public navParams: NavParams,
+              public alertCtrl: AlertController,
               private storage: Storage) {
     this.user = this.navParams.get('user');
 
@@ -80,5 +82,20 @@ masterskills = ['3d printing', 'Accordion', 'Acrylic paint', 'Acting', 'Add fuel
 
   parseStrInt(val) {
     return parseInt(val);
+  }
+  
+  popupPoints() {
+    var comp = this;
+
+    let alert = this.alertCtrl.create({
+      message: 'Our community skill sharing platform uses points for payment. Each account is granted 100 points to get started. Earn points when your friends and family sign up, or when you teach a lesson.',
+      buttons: [
+        {
+          text: 'Ok',
+          role: 'cancel'
+        },
+      ]
+    });
+    alert.present();
   }
 }

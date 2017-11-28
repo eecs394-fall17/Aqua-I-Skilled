@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
-import { AlertController } from 'ionic-angular';
+import { AlertController, ActionSheetController } from 'ionic-angular';
 
 import { CreateprofilePage } from '../../pages/createprofile/createprofile';
 import { EditprofilePage } from '../../pages/editprofile/editprofile';
@@ -23,7 +23,8 @@ export class HeaderBarComponent {
   constructor(public navCtrl: NavController,
               private dbProv: FirebaseProvider,
               private storage: Storage,
-              public alertCtrl: AlertController) {
+              public alertCtrl: AlertController,
+              public actionSheetCtrl: ActionSheetController) {
     this.storage.get('account').then((val) => {
       var comp = this;
 
@@ -57,6 +58,39 @@ export class HeaderBarComponent {
     });
   }
 
+  checkLogin() {
+    if (this.account == undefined) {
+      let actionSheet = this.actionSheetCtrl.create({
+        buttons: [
+         {
+           text: 'Sign In',
+           icon: 'log-in',
+           handler: () => {
+            this.signIn();
+           }
+         },
+         {
+           text: 'Sign Up',
+           icon: 'create',
+           handler: () => {
+            this.createProfile();
+           }
+         },
+         {
+           text: 'Cancel',
+           role: 'cancel',
+           handler: () => {
+           }
+         }
+        ]
+      });
+
+      actionSheet.present();
+    } else {
+      this.createProfile();
+    }
+  }
+
   signIn() {
     var comp = this;
 
@@ -76,13 +110,18 @@ export class HeaderBarComponent {
           handler: data => {
             if (data.username != "") {
               comp.storage.set('account', data.username).then(() => {
-                comp.goToSearch();
+                comp.dbProv.db.list('/newusers', ref => ref.orderByChild('name').equalTo(data.username)).snapshotChanges().subscribe(function(users) {
+                  if (users.length > 0) {
+                    comp.setAccount(users[0].payload.val());
+                    comp.createProfile();
+                  }
+                });
               });
             } else
               return false;
           }
         }
-      ]
+      ],
     });
     alert.present();
   }
