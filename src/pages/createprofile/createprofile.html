@@ -41,6 +41,13 @@
       <option disabled selected hidden> Skills </option>
       <option *ngFor="let skill of masterskills" value="{{skill}}">{{skill}}</option>
     </select>
+    <div style="clear: both;"></div>
+
+    <div class="popupinfo" style="margin-bottom: 20px;">
+      <div style="float: left; margin-top: 5px; margin-left: 10%; width: 50%; text-align: center;">Sign-up Account Bonus:</div>
+      <div style="float: left;"class="popupinfo2">100 Points</div>
+      <ion-icon style="font-size:28px; float:left; padding: 2px 0 0 10px;" name="information-circle" (click)="popupPoints()"></ion-icon>
+    </div>
 
     <textarea id="descText" [(ngModel)]="user.description" name="description" class="text-input, inputBox" rows=5 placeholder="Description Example: I am a professional chef with 25 years of experience in cooking Chinese and Thai food. I currently work at Novotei."></textarea>
 

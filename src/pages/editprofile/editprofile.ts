@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { AlertController } from 'ionic-angular';
 
 import { CreateprofilePage } from '../createprofile/createprofile';
 import { SearchPage } from '../../pages/search/search';
@@ -24,6 +25,7 @@ masterskills = ['3d printing', 'Accordion', 'Acrylic paint', 'Acting', 'Add fuel
   constructor(public navCtrl: NavController,
               public dbProv: FirebaseProvider,
               public navParams: NavParams,
+              public alertCtrl: AlertController,
               private storage: Storage) {
     this.user = this.navParams.get('user');
 
@@ -51,17 +53,19 @@ masterskills = ['3d printing', 'Accordion', 'Acrylic paint', 'Acting', 'Add fuel
   }
 
   timeStrFor(date) {
-    var hours = date.getHours();
+    var hours = date.getUTCHours();
     var isPm = hours > 12;
     hours -= (isPm ? 12 : 0);
-    return hours + (isPm ? ":00pm" : ":00am");
+    var minutes = date.getUTCMinutes();
+    var mins = (minutes < 10 ? "0" + minutes : minutes.toString())
+    return hours + ":" + mins + (isPm ? "pm" : "am");
   }
 
   dateStrFor(date) {
     var days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
     var mons = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 
-    return days[date.getDay()] + " " + mons[date.getMonth()] + " " + date.getDate();
+    return days[date.getUTCDay()] + " " + mons[date.getUTCMonth()] + " " + date.getUTCDate();
   }
 
   addLesson() {
@@ -80,5 +84,20 @@ masterskills = ['3d printing', 'Accordion', 'Acrylic paint', 'Acting', 'Add fuel
 
   parseStrInt(val) {
     return parseInt(val);
+  }
+
+  popupPoints() {
+    var comp = this;
+
+    let alert = this.alertCtrl.create({
+      message: 'Our community skill sharing platform uses points for payment. Each account is granted 100 points to get started. Earn points when your friends and family sign up, or when you teach a lesson.',
+      buttons: [
+        {
+          text: 'Ok',
+          role: 'cancel'
+        },
+      ]
+    });
+    alert.present();
   }
 }
