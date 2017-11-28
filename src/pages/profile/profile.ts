@@ -48,19 +48,21 @@ export class ProfilePage {
   }
 
   timeStrFor(date) {
-    var hours = date.getHours();
+    var hours = date.getUTCHours();
     var isPm = hours > 12;
     hours -= (isPm ? 12 : 0);
-    return hours + (isPm ? ":00pm" : ":00am");
+    var minutes = date.getUTCMinutes();
+    var mins = (minutes < 10 ? "0" + minutes : minutes.toString())
+    return hours + ":" + mins + (isPm ? "pm" : "am");
   }
 
   dateStrFor(date) {
     var days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
     var mons = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 
-    return days[date.getDay()] + " " + mons[date.getMonth()] + " " + date.getDate();
+    return days[date.getUTCDay()] + " " + mons[date.getUTCMonth()] + " " + date.getUTCDate();
   }
-
+  
   // temporary button that takes you to the transConfirm page
   confirmTrans(user){
     this.navCtrl.push(TransconfirmPage, {
