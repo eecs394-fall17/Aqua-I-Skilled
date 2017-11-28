@@ -7,4 +7,9 @@ import { Component, Input } from '@angular/core';
 
 export class ProfileBarComponent {
   @Input() user: object;
+
+  ngOnInit() {
+    var names = this.user.name.split(' ');
+    this.user.email = names[0] + "." + names[names.length - 1] + "@gmail.com";
+  }
 }
