@@ -5,9 +5,9 @@
       {{user["name"]}}
     </div>
     <div class="profile-dist">
-      Contact me: {{ user.email }}
+      <div id="show-email" class="email-hover" (click)="showEmail()">Contact me</div>
     </div>
-    <div class="profile-dist">
+    <div *ngIf="user.distance != ''" class="profile-dist">
       {{user["distance"]}} mi.
     </div>
     <div class="profile-star">
