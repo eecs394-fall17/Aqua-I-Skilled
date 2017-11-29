@@ -30,11 +30,12 @@
       <div><strong>Reviews </strong><strong style="color:#66B8E7">(1)</strong>:</div>
       <div *ngFor="let review of reviews">
         <div>
-          <img class="reviewerPhoto" src="./assets/imgs/defaultProfile.png">
+          <img *ngIf="user.name != 'Diane Mari Kimura'" class="reviewerPhoto" src="./assets/imgs/defaultProfile.png">
+          <img *ngIf="user.name == 'Diane Mari Kimura'" class="reviewerPhoto" src="./assets/imgs/Kate.jpg">
           <div class="reviewer">{{ review.reviewer }}</div>
           <div class="reviewDate">12 November, 7:31 PM</div>
+          <div style="padding: 0 0 0 100px;">{{ review["review"] }}</div>
         </div>
-        <div>{{ review["review"] }}</div>
       </div>
     </div>
 
