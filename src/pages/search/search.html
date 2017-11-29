@@ -3,7 +3,7 @@
 </ion-header>
 
 <ion-content>
-<div padding style="background-position: center center; background-size: contain; background-repeat: no-repeat; background-image: url('./assets/imgs/searchBackground.png'); height: 100%;" id="background-content">
+<div padding style="background-position: center center; background-size: contain; background-repeat: no-repeat; background-image: url('./assets/imgs/HomeImage.png'); height: 100%;" id="background-content">
 
 
 <!--<input type="file" (change)="previewFile()"><br>-->
@@ -24,6 +24,8 @@
     (ionCancel)="onSearchCancel($event)"
     [ngClass]="{'searchbar-firsttime': searchedYet == 0, 'searchbar': searchedYet == 1}">
   </ion-searchbar>
+
+  <div *ngIf="searchedYet == 0" style="text-align: center; font-size: 24px; position: absolute; top: 5%; left: 50%; transform: translate(-50%,0); z-index: 0; width: 80%;">What would you like to learn today?</div>
 
   <div class="search-results" style="padding-top: 50px;">
   <ion-card *ngFor="let result of users" class="search-result" (click)="confirmTrans(result)">

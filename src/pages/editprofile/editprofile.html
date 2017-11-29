@@ -3,26 +3,7 @@
 </ion-header>
 
 <ion-content padding>
-  <div class="profile-holder hacky-margin">
-    <img class="profile-img" src="{{ user['image'] }}">
-    <div class="profile-info">
-      <div class="profile-name">
-        {{user["name"]}}
-      </div>
-      <div class="profile-name">
-        {{ user.email }}
-      </div>
-      <div class="profile-dist">
-        {{user["distance"]}} mi.
-      </div>
-      <div class="profile-star">
-        <ion-icon *ngFor="let starCount of user['starRange']" name="star"></ion-icon>
-        <div style="float: right; padding-right: 40%;">{{ user['rating'] }}</div>
-      </div>
-    </div>
-
-    <div style="clear: both;"></div>
-  </div>
+  <page-profilebar [user]="user"></page-profilebar>
 
   <div class="header-ps">
     Your Description
@@ -68,10 +49,10 @@
       <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="newLesson.time" [ngModelOptions]="{standalone: true}"></ion-datetime>
     </ion-item>
     
-    <button ion-button type="submit" block>Add Lesson Time</button>
+    <button ion-button type="submit" class="btn" color="babyblue" block>Add Lesson Time</button>
   </form>
 
-  <div class="header-ps">
+  <div class="header-ps" style="margin-bottom: -20px;">
     Your Lessons
   </div>
   <div *ngFor="let lesson of lessons; let i = index" class="lesson-holder ">
@@ -87,6 +68,6 @@
     <div style="clear: both;"></div>
   </div>
 
-  <button ion-button large float-right class="btn" color="babyblue" (click)="signOut()">Sign Out</button>
+  <button ion-button float-right class="btn" color="babyblue" (click)="signOut()">Sign Out</button>
   
 </ion-content>
