@@ -100,7 +100,7 @@ masterskills = ['3d printing', 'Accordion', 'Acrylic paint', 'Acting', 'Add fuel
 
   addPhoto() {
     const options: CameraOptions = {
-      //sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+      sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
       quality: 100,
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
