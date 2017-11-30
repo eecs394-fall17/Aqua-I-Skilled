@@ -3,7 +3,8 @@ page-profile {
   @import "../../theme/main";
   @import "../../theme/lessons";
   @import "../../theme/profiles";
-  
+  @import "../../theme/booking";
+
   // .accordion > div {
   //   border-bottom: 2px solid #F3F3F3;
   // }
@@ -28,24 +29,6 @@ page-profile {
 
   .schedule-holder {
     font-size: 18px;
-  }
-
-  .book-holder {
-    display: flex;
-    justify-content: space-evenly;
-    color: green;
-  }
-
-  .book-info {
-    display: table-cell;
-    text-align: center;
-    font-size: 30px;
-    margin-top: auto;
-    margin-bottom: auto;
-  }
-
-  .book-button {
-    font-size: 30px;
   }
 
   // split up so can get multiple lines of text like the wireframes they sent earlier
