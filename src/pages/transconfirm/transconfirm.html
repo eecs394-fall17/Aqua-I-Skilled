@@ -28,13 +28,10 @@
       </div>
     </div>
   </ion-list>
-</ion-content>
 
-<ion-footer>
-  <ion-toolbar>
-    <div class="book-holder">
-      <div class="book-info"><strong>{{ user["price"] }} Pts</strong></div>
-      <button class="reqButton" ion-button color="babyblue" large item-right (click)="confirmReq()">Request</button>
-    </div>
-  </ion-toolbar>
-</ion-footer>
+  <div class="book-holder">
+    <div class="book-info"><strong>{{ user['price'] }} Pts</strong></div>
+    <button ion-button large float-right color="babyblue" (click)="confirmReq()">Request</button>
+  </div>
+
+</ion-content>

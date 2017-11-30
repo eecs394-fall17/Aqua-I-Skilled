@@ -1,7 +1,8 @@
 page-transconfirm {
 
   @import "../../theme/main";
-
+  @import "../../theme/booking";
+  
   .profile-img {
     float: left;
     width: 30%;
@@ -43,24 +44,6 @@ page-transconfirm {
   .schedule-holder * {
     font-size: 18px;
     margin: 10px 0px;
-  }
-
-  .book-holder {
-    display: flex;
-    justify-content: space-evenly;
-    color: green;
-  }
-
-  .book-info {
-    display: table-cell;
-    text-align: center;
-    font-size: 30px;
-    margin-top: auto;
-    margin-bottom: auto;
-  }
-
-  .book-button {
-    font-size: 30px;
   }
 
   .lesson-icon {
