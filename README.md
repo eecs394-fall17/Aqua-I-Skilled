@@ -1,53 +1,63 @@
 # I-Skilled
-I-skilled allows users to learn and/or teach different skills to others in their community. Skills may range from how to change oil to cooking, to languages - anything you desire.
+I-Skilled is a hybrid mobile application prototype that facilitates a platform where users learn and teach various skills to others in their community, ranging from how to change a car's oil to languages. Developed in Ionic/Angular, using Firebase cloud storage, I-Skilled can run on most smartphones.
 
-## FIREBASE
-1. Create a Firebase Realtime Database. 
-Instructions can be found at https://firebase.google.com/docs/database/web/start
+## DEPENDENCIES 
+1. Firebase Realtime Database:
+Instructions can be found on Google Firebase Console docs, at https://firebase.google.com/docs/database/web/start
+2. Node/Npm: 
+Instructions can be found on npmJS docs, at https://docs.npmjs.com/getting-started/installing-node
 
-## OTHER DEPENDENCIES
- 
-## INSTALLATION
-Clone the repo
+## INSTALLATION & CONFIGURATION
 Install Ionic
 ```
 npm install -g cordova ionic
 ```
-Within the cloned project directory, run
+Clone this repo. Within the cloned project directory, run the following to install all dependencies
 ```
 npm install
 ```
-Install firebase
+Create the file app.firebaseEnv.ts in your local src/app directory, containing your Firebase API configuration, similar to:
 ```
- npm install firebase angularfire2 --save
- ```
-## BUILD & DEPLOY
-In the browser
-```
-sudo npm install -g ionic cordova
-```
-```
-ionic serve 
-```
-On an Android phone
-```
- ionic cordova platform add [android, ios]
-```
-```
- ionic cordova run [android, ios]
+export const firebaseConfig = {
+ apiKey: "",
+ authDomain: "",
+ databaseURL: "",
+ projectId: "",
+ storageBucket: "",
+ messagingSenderId: ""
+}
 ```
 
-On an iOS phone
+## BUILD & DEPLOY
+### In the browser
+```
+ionic serve
+```
+The default hostname is localhost. The default port is 8100.
+
+### On an Android phone
+1. First time cordova setup
+```
+ ionic cordova platform add android
+```
+2. Connect your phone via USB
+3. Run to launch on device
+```
+ ionic cordova run android --device
+```
+
+### On an iOS phone
 1. install Xcode 
 2. go into your local project directory, and run a production build of your app
 ```
+ionic cordova platform add ios
 ionic cordova build ios
 ```
 3. Open the .xcodeproj file in platforms/ios/ in Xcode
 4. Connect your phone via USB and select it as the run target
 5. Click the play button in Xcode to try to run your app
 
-Using Ionic View
+### Using Ionic View
 Make an account on Ionic at http://ionicframework.com/ , and create an app
 1. Install the latest Ionic CLI
 ```
@@ -70,8 +80,8 @@ git push --set-upstream origin master
 To test your app or have other users test your app on your phone, download 'Ionic View-Test Ionic Apps' on phone to test app on your phone
 Provide other users with the public id assined on your ionic website dashboard to view the app. 
 
-
 ## PLATFORM CONSTRAINTS
+Ionic lacks certain native app abilities but accomodates most of them using ionic cordova plugins.
 
 ## BUGS
 - header bar overlaps on some phones
@@ -82,5 +92,3 @@ Provide other users with the public id assined on your ionic website dashboard t
 - Managing requested lessons for giver and receiver. 
 - Reviewing a user after a lesson occurs
 - Search based on proximity to user and other fields
-
-
