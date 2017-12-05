@@ -1,8 +1,18 @@
-### I-Skilled
+# I-Skilled | 
 
 ## DESCRIPTION
 
-## SYSTEM REQUIREMENTS
+## DEPENDENCIES
+-Clone the repo
+-Install Ionic
+```
+npm install -g cordova ionic
+```
+-Within the cloned project directory, install dependencies
+```
+npm install
+```
+
 
 ## INSTALLATION 
 
