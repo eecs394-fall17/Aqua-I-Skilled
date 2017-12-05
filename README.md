@@ -18,10 +18,19 @@ Within the cloned project directory, run
 npm install
 ```
 ## BUILD & DEPLOY
+In the browser
 
-## PLATFORM CONSTRAINTS
+On an Android phone
 
-## KNOWN BUGS
+On an iOS phone
+1. install Xcode 
+2. go into your local project directory, and run a production build of your app
+```
+ionic cordova build ios
+```
+3. Open the .xcodeproj file in platforms/ios/ in Xcode
+4. Connect your phone via USB and select it as the run target
+5. Click the play button in Xcode to try to run your app
 
 ## RUN APP
 In the browser
@@ -31,6 +40,8 @@ sudo npm install -g ionic cordova
 ```
 ionic serve 
 ```
+On an iOS phone
+'''
 On a phone
 ```
  ionic cordova platform add [android, ios]
@@ -46,3 +57,6 @@ Updating Cordova Android
 ```
  cordova platform update android@6.3.0
  ````
+## PLATFORM CONSTRAINTS
+
+## KNOWN BUGS
