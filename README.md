@@ -1,6 +1,5 @@
 # I-Skilled
-
-## DESCRIPTION
+I-skilled allows users to learn and/or teach different skills to others in their community. Skills may range from how to change oil to cooking, to languages - anything you desire.
 
 ## DEPENDENCIES
 1. Create a Firebase Realtime Database. 
@@ -9,8 +8,7 @@ Instructions can be found at https://firebase.google.com/docs/database/web/start
 ```
  cordova platform update android@6.3.0
  ````
-
-
+ 
 ## INSTALLATION
 Clone the repo
 Install Ionic
@@ -77,4 +75,5 @@ Provide other users with the public id assined on your ionic website dashboard t
 
 ## PLATFORM CONSTRAINTS
 
-## KNOWN BUGS
+## UNFINISHED WORK
+
