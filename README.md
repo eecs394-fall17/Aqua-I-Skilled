@@ -1,6 +1,9 @@
 # I-Skilled
 I-Skilled is a hybrid mobile application prototype that facilitates a platform where users learn and teach various skills to others in their community, ranging from how to change a car's oil to languages. Developed in Ionic/Angular, using Firebase cloud storage, I-Skilled can run on most smartphones.
 
+![search](images_readme/Search.png)
+![profile](images_readme/Profile.png)
+
 ## DEPENDENCIES 
 1. Firebase Realtime Database:
 Instructions can be found on Google Firebase Console docs, at https://firebase.google.com/docs/database/web/start
@@ -88,7 +91,7 @@ Ionic lacks certain native app abilities but accomodates most of them using ioni
 - pictures may be slow to load from database
 - search bar does not cover entire width of screen
 
-## UNFINISHED WORK
+## TODO
 - Managing requested lessons for giver and receiver. 
 - Reviewing a user after a lesson occurs
 - Search based on proximity to user and other fields
