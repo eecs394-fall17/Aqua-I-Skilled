@@ -1,4 +1,10 @@
-## How to use I-Skilled 
+### I-Skilled
+
+## DESCRIPTION
+
+## SYSTEM REQUIREMENTS
+
+## INSTALLATION 
 
 # In the browser
 $ sudo npm install -g ionic cordova
