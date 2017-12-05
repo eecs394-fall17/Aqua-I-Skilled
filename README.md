@@ -50,8 +50,8 @@ The default hostname is localhost. The default port is 8100.
 ```
 
 ### On an iOS phone
-1. install Xcode 
-2. go into your local project directory, and run a production build of your app
+1. Install Xcode 
+2. Go into your local project directory, and run a production build of your app
 ```
 ionic cordova platform add ios
 ionic cordova build ios
