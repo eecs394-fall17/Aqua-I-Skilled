@@ -80,8 +80,8 @@ git push ionic master
 git remote add origin [Your_repository_URL]
 git push --set-upstream origin master
 ```
-To test your app or have other users test your app on your phone, download 'Ionic View-Test Ionic Apps' on phone to test app on your phone
-Provide other users with the public id assined on your ionic website dashboard to view the app. 
+To test your app or have other users test your app on a phone, download 'Ionic View-Test Ionic Apps' from the app store.
+Provide other users with the public id assigned on your ionic website dashboard to view the app. 
 
 ## PLATFORM CONSTRAINTS
 Ionic lacks certain native app abilities but accomodates most of them using ionic cordova plugins.
