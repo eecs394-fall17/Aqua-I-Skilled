@@ -1,4 +1,4 @@
-# I-Skilled | 
+# I-Skilled
 
 ## DESCRIPTION
 
@@ -20,9 +20,8 @@ npm install
 
 ## KNOWN BUGS
 
-## RUNNING
-
-### In the browser
+## RUN APP
+In the browser
 ```
 sudo npm install -g ionic cordova
 ```
