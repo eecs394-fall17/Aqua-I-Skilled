@@ -73,6 +73,11 @@ Provide other users with the public id assined on your ionic website dashboard t
 
 ## PLATFORM CONSTRAINTS
 
+## BUGS
+- header bar overlaps on some phones
+- pictures may be slow to load from database
+- search bar does not cover entire width of screen
+
 ## UNFINISHED WORK
 - Managing requested lessons for giver and receiver. 
 - Reviewing a user after a lesson occurs
