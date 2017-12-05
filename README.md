@@ -51,6 +51,29 @@ ionic cordova build ios
 4. Connect your phone via USB and select it as the run target
 5. Click the play button in Xcode to try to run your app
 
+Using Ionic View
+Make an account on Ionic at http://ionicframework.com/ , and create an app
+1. Install the latest Ionic CLI
+```
+npm install ionic@latest
+```
+2. Connect your app to the Ionic website
+```
+ionic start --pro-id [####] 
+cd [Your_App_Name]
+```
+3. Push your code to the Ionic Website Dashboard
+```
+git push ionic master
+```
+4. Add your own external repository as the default origin
+```
+git remote add origin [Your_repository_URL]
+git push --set-upstream origin master
+```
+To test your app or have other users test your app on your phone, download 'Ionic View-Test Ionic Apps' on phone to test app on your phone
+Provide other users with the public id assined on your ionic website dashboard to view the app. 
+
 
 ## PLATFORM CONSTRAINTS
 
