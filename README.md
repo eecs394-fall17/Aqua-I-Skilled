@@ -3,31 +3,44 @@
 ## DESCRIPTION
 
 ## DEPENDENCIES
--Clone the repo
--Install Ionic
+
+## INSTALLATION
+Clone the repo
+Install Ionic
 ```
 npm install -g cordova ionic
 ```
--Within the cloned project directory, install dependencies
+Within the cloned project directory, install dependencies
 ```
 npm install
 ```
+## BUILD & DEPLOY
 
+## PLATFORM CONSTRAINTS
 
-## INSTALLATION 
+## KNOWN BUGS
 
-# In the browser
-$ sudo npm install -g ionic cordova
+## RUNNING
 
-$ ionic serve 
-
-# On a phone
-$ ionic cordova platform add [android, ios]
-
-$ ionic cordova run [android, ios]
-
-# Plugins
-$ npm install firebase angularfire2 --save
-
-# Updating Cordova Android
-$ cordova platform update android@6.3.0
+### In the browser
+```
+sudo npm install -g ionic cordova
+```
+```
+ionic serve 
+```
+On a phone
+```
+ ionic cordova platform add [android, ios]
+```
+```
+ ionic cordova run [android, ios]
+```
+Plugins
+```
+ npm install firebase angularfire2 --save
+ ```
+Updating Cordova Android
+```
+ cordova platform update android@6.3.0
+ ````
