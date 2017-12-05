@@ -87,11 +87,11 @@ Provide other users with the public id assigned on your ionic website dashboard 
 Ionic lacks certain native app abilities but accomodates most of them using ionic cordova plugins.
 
 ## BUGS
-- header bar overlaps on some phones
-- pictures may be slow to load from database
-- search bar does not cover entire width of screen
+- Header bar overlaps on some phones
+- Pictures may be slow to load from database
+- Search bar does not cover entire width of screen
 
 ## TODO
-- Managing requested lessons for giver and receiver. 
+- Managing requested lessons for giver and receiver 
 - Reviewing a user after a lesson occurs
 - Search based on proximity to user and other fields
