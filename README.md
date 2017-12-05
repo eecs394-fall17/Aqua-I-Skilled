@@ -52,8 +52,6 @@ ionic cordova build ios
 5. Click the play button in Xcode to try to run your app
 
 
-## RUN APP
-
 ## PLATFORM CONSTRAINTS
 
 ## KNOWN BUGS
