@@ -74,4 +74,8 @@ Provide other users with the public id assined on your ionic website dashboard t
 ## PLATFORM CONSTRAINTS
 
 ## UNFINISHED WORK
+- Managing requested lessons for giver and receiver. 
+- Reviewing a user after a lesson occurs
+- Search based on proximity to user and other fields
+
 
