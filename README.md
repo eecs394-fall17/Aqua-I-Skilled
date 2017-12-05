@@ -3,6 +3,9 @@
 ## DESCRIPTION
 
 ## DEPENDENCIES
+1. Create a Firebase Realtime Database. 
+Instructions can be found at https://firebase.google.com/docs/database/web/start
+
 
 ## INSTALLATION
 Clone the repo
@@ -10,7 +13,7 @@ Install Ionic
 ```
 npm install -g cordova ionic
 ```
-Within the cloned project directory, install dependencies
+Within the cloned project directory, run
 ```
 npm install
 ```
